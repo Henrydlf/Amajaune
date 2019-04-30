@@ -50,12 +50,10 @@
 
 		public function afficherPanier()
 		{
-			if($this->user->getType() == 'Acheteur')
+			if($this->user->getType() == 'Acheteur' || $this->user->getType() == 'Administrateur')
 				echo "Votre panier est disponible <br><br>";
 			elseif($this->user->getType() == 'Vendeur')
 				echo "Vous etes un vendeur";
-			else
-				echo "Pas de type dispo";
 		}
 	}
 ?>
