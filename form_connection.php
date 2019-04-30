@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<h2>Inscription</h2>
+	<h2>Connexion</h2>
 
 	<form action="init_connection.php" method="post">
 		<table>
