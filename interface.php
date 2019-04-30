@@ -5,6 +5,7 @@
 	class Site
 	{
 		protected $user;
+		protected $paniers;
 
 		public function __construct(Utilisateur $_user){
 			$this->user = $_user;
@@ -38,6 +39,14 @@
 			else{
 				echo "Bonjour " .$this->user->getID(). ". <br>";
 			}
-		}	
+		}
+
+		public function afficherPanier()
+		{
+			if($this->user->getType() = 'Acheteur')
+				echo "Votre panier est disponible <br><br>";
+			elseif($this->user->getType() = 'Vendeur')
+				echo "Vous etes un vendeur";
+		}
 	}
 ?>

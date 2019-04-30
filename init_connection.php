@@ -9,4 +9,5 @@
 	$interface = new Site($user);
 
 	$interface->connectUser();
+	$interface->afficherPanier();
 ?>
