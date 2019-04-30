@@ -8,7 +8,17 @@
 </head>
 
 <body>
-	<h2>Inscription</h2>
+	<!--<h2>Connection</h2>-->
+	<!--CLASSE DU TITRE DU CITE AMAJAUNE-->
+<div class="jumbotron">
+  <div class="container text-center">
+    <!--TITRE DU CITE----------------------------------------------------------------------------------------->
+    <h1> 
+    <div class="color">AMAJAUNE</div> 
+    </h1>    
+    <p>Mission, Vission & Values</p>
+  </div>
+</div>
 
 	<form action="init_connection.php" method="post">
 		<table>
