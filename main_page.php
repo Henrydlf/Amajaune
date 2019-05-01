@@ -12,25 +12,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-  <!--<style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #ffff00;
-      padding: 25px;
-    }
-  </style>-->
-
 </head>
 
 <body>
@@ -66,9 +47,9 @@
       <ul class="nav navbar-nav navbar-right">
 
       	<!--CONNEXION-->
-        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
+        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span> Se connecter </a></li>
         <!--PANIER-->
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a></li>
       </ul>
     </div>
   </div>
