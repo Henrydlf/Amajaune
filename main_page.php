@@ -4,32 +4,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Amajaune 51</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="main_page.css" rel="stylesheet" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <!--<style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #ffff00;
-      padding: 25px;
-    }
-  </style>-->
 
 </head>
 
@@ -40,9 +21,8 @@
   <div class="container text-center">
     <!--TITRE DU CITE----------------------------------------------------------------------------------------->
     <h1> 
-    <div class="color">Amajaune</div> 
-    </h1>    
-    <p>Plaisir, copains & Boisson</p>
+    <div class="color">Amajaune 51</div> 
+    </h1>
   </div>
 </div>
 

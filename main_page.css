@@ -1,14 +1,19 @@
 
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
-      margin-bottom: 50px;
+      margin-bottom: 25px;
       border-radius: 0;
     }
     
     /* Remove the jumbotron's default bottom margin */ 
      .jumbotron {
-      margin-bottom: 0;
+      /*argin-bottom: 0;*/
       background-color: #ffff00;
+      margin-bottom: 0;
+      background-image:url(images_main/map-2562138_1920.jpg);
+      height: 150px;
+
+      background-color: rgba(0, 0, 0, 0);
     }
    
     /* Add a gray background color and some padding to the footer */
@@ -17,7 +22,11 @@
       padding: 25px;
     }
     .color{
-
-    	color:#0000ff;
-
+    	color: #000000;
+      font-weight: bold;
+      font-style: italic;
+      font-family:"times new roman", times, serif;
+      font-size: 100px;
+      position: relative;
+      top: -45px; left: 40px;
     }
