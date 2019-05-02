@@ -9,5 +9,5 @@
 	$interface = new Site($user);
 
 	$interface->connectUser();
-	$interface->afficherPanier();
+	header('Location: main_page.php');
 ?>

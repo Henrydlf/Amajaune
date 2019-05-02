@@ -44,7 +44,6 @@
 				$this->user->setSurname($resultat['Prenom']);
 				$this->user->setType($resultat['Type']);
 				$this->user->setPassword($resultat['Mdp']);
-				echo "Vous êtes connecté !<br><br>";
 			}
 		}
 
