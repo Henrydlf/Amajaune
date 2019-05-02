@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Amajaune 51</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
   <div class="container text-center">
     <!--TITRE DU CITE----------------------------------------------------------------------------------------->
     <h1> 
-    <div class="color">AMAJAUNE</div> 
+    <div class="color">AMAJAUNE 51</div> 
     </h1>    
     <p>Plaisir, copains & Boisson</p>
   </div>
