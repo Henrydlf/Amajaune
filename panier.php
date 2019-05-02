@@ -25,9 +25,8 @@
 <div class="jumbotron">
   <div class="container text-center">
     <h1> 
-    <div class="color">Amajaune</div> 
+    <div class="color">Amajaune 51</div> 
     </h1>    
-    <p>Plaisir, copains & Boisson</p>
   </div>
 </div>
 
