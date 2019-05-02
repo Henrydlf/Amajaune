@@ -143,6 +143,6 @@
 </div>
 
 <!-- Footer -->
-<footer class="container-fluid text-center">
+<footer>
   <p>Amajaune Copyright</p>  
 </footer>
