@@ -16,6 +16,7 @@
   <link href="main_page.css" rel="stylesheet" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="favicon.ico" >
 </head>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
@@ -42,10 +43,10 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="main_page.php">Accueuil</a></li>
-        <li><a href="#">Livres</a></li>
-        <li><a href="#">Musiques</a></li>
-        <li><a href="#">Vêtements</a></li>
-        <li><a href="#">Sports et loisir</a></li>
+        <li><a href="livres.php">Livres</a></li>
+        <li><a href="musiques.php">Musiques</a></li>
+        <li><a href="vetements.php">Vêtements</a></li>
+        <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 

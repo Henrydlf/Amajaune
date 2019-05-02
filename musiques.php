@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Livres</title>
+  <title>Musiques</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -39,8 +39,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="main_page.php">Accueuil</a></li>
-        <li class="active"><a href="#">Livres</a></li>
-        <li><a href="musiques.php">Musiques</a></li>
+        <li><a href="livres.php">Livres</a></li>
+        <li class="active"><a href="musiques.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>

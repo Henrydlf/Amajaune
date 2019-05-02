@@ -11,6 +11,7 @@
   <link href="main_page.css" rel="stylesheet" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="favicon.ico" >
 
 </head>
 
@@ -38,10 +39,10 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Accueuil</a></li>
-        <li><a href="#">Livres</a></li>
-        <li><a href="#">Musiques</a></li>
-        <li><a href="#">Vêtements</a></li>
-        <li><a href="#">Sports et loisir</a></li>
+        <li><a href="livres.php">Livres</a></li>
+        <li><a href="musiques.php">Musiques</a></li>
+        <li><a href="vetements.php">Vêtements</a></li>
+        <li><a href="spotsetloisirs.php">Sports et loisir</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
