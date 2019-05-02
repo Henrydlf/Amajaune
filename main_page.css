@@ -7,19 +7,19 @@
     
     /* Remove the jumbotron's default bottom margin */ 
      .jumbotron {
-      /*argin-bottom: 0;*/
-      background-color: #ffff00;
       margin-bottom: 0;
       background-image:url(images_main/map-2562138_1920.jpg);
       height: 150px;
-
       background-color: rgba(0, 0, 0, 0);
     }
    
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #ffff00;
-      padding: 25px;
+      background-color: #333;
+      height: 40px;
+      text-align: center;
+      color: #C0C0C0;
+      line-height: 30px;
     }
     .color{
     	color: #000000;
