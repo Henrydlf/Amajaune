@@ -42,7 +42,7 @@
     <h1> 
     <div class="color">Amajaune</div> 
     </h1>    
-    <p>Plaisir, copains & Boisson</p>
+    <p>Plaisir, copains & Boissons</p>
   </div>
 </div>
 
