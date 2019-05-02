@@ -143,5 +143,5 @@
 
 <!-- Footer -->
 <footer>
-  <p>Amajaune Copyright</p>  
+  <p>&copy; Amajaune Copyright</p>  
 </footer>

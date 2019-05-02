@@ -82,6 +82,6 @@
 
 
 
-<footer class="container-fluid text-center">
-  <p>Amajaune Copyright</p>  
+<footer>
+  <p>&copy; Amajaune Copyright</p>  
 </footer>
