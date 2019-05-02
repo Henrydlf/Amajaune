@@ -5,6 +5,7 @@
 	class Site
 	{
 		protected $user;
+		protected $paniers;
 
 		public function __construct(Utilisateur $_user){
 			$this->user = $_user;
@@ -36,8 +37,23 @@
 			if(!$resultat)
 				echo "L'identifiant ou le mot de passe est erroné. <br>";
 			else{
-				echo "Bonjour " .$this->user->getID(). ". <br>";
+				session_start();
+				$this->user->setId($resultat['Identifiant']);
+				$this->user->setEmail($resultat['Mail']);
+				$this->user->setName($resultat['Nom']);
+				$this->user->setSurname($resultat['Prenom']);
+				$this->user->setType($resultat['Type']);
+				$this->user->setPassword($resultat['Mdp']);
+				echo "Vous êtes connecté !<br><br>";
 			}
-		}	
+		}
+
+		public function afficherPanier()
+		{
+			if($this->user->getType() == 'Acheteur' || $this->user->getType() == 'Administrateur')
+				echo "Votre panier est disponible <br><br>";
+			elseif($this->user->getType() == 'Vendeur')
+				echo "Vous etes un vendeur";
+		}
 	}
 ?>

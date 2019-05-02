@@ -40,7 +40,7 @@
   <div class="container text-center">
     <!--TITRE DU CITE----------------------------------------------------------------------------------------->
     <h1> 
-    <div class="color">AMAJAUNE</div> 
+    <div class="color">Amajaune</div> 
     </h1>    
     <p>Plaisir, copains & Boisson</p>
   </div>
@@ -58,15 +58,17 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Stores</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="Categories.php">Categories</a></li>
+        <li><a href="#">Ventes flash</a></li>
+        <li><a href="#">Vendre</a></li>
+        <li><a href="#">Votre compte</a></li>
+        <li><a href="#">Panier</a></li>
+        <li><a href="#">Admin</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
       	<!--CONNEXION-->
-        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
+        <li><a href="form_connection_bis.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
         <!--PANIER-->
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>

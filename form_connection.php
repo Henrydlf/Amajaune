@@ -5,26 +5,30 @@
 <head>
 	<title>Connexion Amajaune 51</title>
 	<meta charset="utf-8">
+	<link href="form_connection.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-	<!--<h2>Connection</h2>-->
-	<!--CLASSE DU TITRE DU CITE AMAJAUNE-->
-<div class="jumbotron">
+	<!--<h2>Connexion</h2>-->
+
+    <!--TITRE CONNECTION----------------------------------------------------------------------------------------->
+
+	<div class="icone_connection">
   <div class="container text-center">
-    <!--TITRE DU CITE----------------------------------------------------------------------------------------->
     <h1> 
-    <div class="color">AMAJAUNE</div> 
+    <div class="color_icone_connection">Connection</div> 
     </h1>    
-    <p>Mission, Vission & Values</p>
   </div>
 </div>
 
 	<form action="init_connection.php" method="post">
 		<table>
+			<p>Veuillez entrer vos identifiants</p>
 			<tr>
+				<div class="identifiant">
 				<td>Identifiant:</td>
 				<td><input type="text" name="id"></td>
+			    </div>
 			</tr>
 
 			<tr>
