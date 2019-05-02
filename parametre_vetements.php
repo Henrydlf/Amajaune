@@ -60,10 +60,10 @@
         </tr>
 
         <tr>
-              <td colspan="2">
-                <input type="submit" name="button1" value="Vendre">
-                <input type="reset" name="button2" value="Réinitialiser">
-              </td>
+          <td colspan="2">
+            <input type="submit" name="button1" value="Vendre">
+            <input type="reset" name="button2" value="Réinitialiser">
+          </td>
         </tr>
       </table>
     </form>
