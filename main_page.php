@@ -23,7 +23,7 @@
     <h1> 
     <div class="color">AMAJAUNE 51</div> 
     </h1>    
-    <p>Plaisir, copains & Pastis</p>
+    <p>Plaisir, copains & Boissons</p>
   </div>
 </div>
 
