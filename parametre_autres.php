@@ -33,37 +33,10 @@
         </tr>
 
         <tr>
-          <td>Sexe:</td>
-          <td><select name="sexe" size="1">
-            <option>Veuillez choisir une option</option>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Enfant</option>
-            </select>
+          <td colspan="2">
+            <input type="submit" name="button1" value="Vendre">
+            <input type="reset" name="button2" value="Réinitialiser">
           </td>
-        </tr>
-
-        <tr>
-          <td>Taille:</td>
-          <td><select name="taille" size="1">
-            <option>Veuillez choisir une option</option>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            </select>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Couleur:</td>
-          <td><input type="text" name="couleur"></td>
-        </tr>
-
-        <tr>
-              <td colspan="2">
-                <input type="submit" name="button1" value="Vendre">
-                <input type="reset" name="button2" value="Réinitialiser">
-              </td>
         </tr>
       </table>
     </form>
