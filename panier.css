@@ -2,6 +2,12 @@
 ** Style Simple Ecommerce Theme for Bootstrap 4
 ** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
 */
+
+.navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+}
+    
 .bloc_left_price {
     color: #c01508;
     text-align: center;
@@ -51,10 +57,11 @@
 .pagination {
     margin-top: 20px;
 }
-footer {
-    background: #343a40;
-    padding: 40px;
-}
 footer a {
     color: #f8f9fa!important
 }
+
+ footer {
+      background-color: #ffff00;
+      padding: 25px;
+    }
