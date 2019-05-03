@@ -34,10 +34,8 @@
 			$sql->execute();
 			$resultat = $sql->fetch();
 
-			if(!$resultat){
-				header('Location: form_connection.php');
-			}
-
+			if(!$resultat)
+				echo "L'identifiant ou le mot de passe est erroné. <br>";
 			else{
 				session_start();
 				$_SESSION['Identifiant'] = $resultat['Identifiant'];

@@ -1,6 +1,4 @@
-<?php  
-session_start();
-?>
+<?php  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +51,7 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
 
         <!--CONNEXION-->
-        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span><?php echo " ".$_SESSION['Prenom'] ?></a></li>
+        <li><a href="form_connection_bis.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
         <!--PANIER-->
         <li class="active"><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>
@@ -133,12 +131,10 @@ session_start();
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <!--<button class="btn btn-block btn-light" href="main_page.php">Continuer mes achats</button> -->
-                    <a class="btn btn-block btn-primary" href="main_page.php" role="button">Continuer mes achats</a>
+                    <button class="btn btn-block btn-light">Continuer mes achats</button>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <!--<button class="btn btn-block btn-success">Paiement</button> -->
-                    <a class="btn btn-block btn-success" href="checkout.php" role="button">Paiement</a>
+                    <button class="btn btn-block btn-success">Paiement</button>
                 </div>
             </div>
         </div>

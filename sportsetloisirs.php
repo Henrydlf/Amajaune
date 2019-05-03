@@ -1,5 +1,4 @@
 <?php 
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +47,7 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
 
       	<!--CONNEXION-->
-        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span><?php echo " ".$_SESSION['Prenom'] ?></a></li>
+        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
         <!--PANIER-->
         <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>
