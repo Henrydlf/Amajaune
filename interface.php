@@ -46,6 +46,15 @@
 				$_SESSION['Prenom']=$resultat['Prenom'];
 				$_SESSION['Type']=$resultat['Type'];
 				$_SESSION['Mdp']=$resultat['Mdp'];
+				$_SESSION['photo']=$resultat['photo'];
+				if($resultat['Type'] == 'Acheteur')
+				{
+					$_SESSION['num_carte']=$resultat['num_carte'];
+					$_SESSION['date_exp']=$resultat['date_exp'];
+					$_SESSION['cvv']=$resultat['cvv'];
+					$_SESSION['type_carte']=$resultat['type_carte'];
+					$_SESSION['nom_carte']=$resultat['nom_carte'];
+				}
 
 				header('Location: main_page.php');
 			}
