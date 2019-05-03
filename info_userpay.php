@@ -71,26 +71,25 @@ session_start();
     <div class="col-sm-3 sidenav">
       <h4>Informations utilisateur</h4>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section2">Modifier mes informations personelles</a></li>
-        <li><a href="info_userpay.php">Modifier mes informations de paiement</a></li>
+        <li><a href="info_user.php">Modifier mes informations personelles</a></li>
+        <li class="active"><a href="#section3">Modifier mes informations de paiement</a></li>
       </ul><br>
     </div>
 
     <div class="col-sm-9">
 
-     	<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:20%" alt="Image"></div>
 
       <div style="margin-left: 25px">
-      	<h4>Identifiant:</h4>
-        <p><?php echo " " .$_SESSION['Identifiant']?></p>
-        <h4>Adresse mail:</h4>
-        <p><?php echo " " .$_SESSION['Mail']?></p>
-        <h4>Nom:</h4>
-        <p><?php echo " " .$_SESSION['Nom']?></p>
-        <h4>Prénom:</h4>
-        <p><?php echo " " .$_SESSION['Prenom']?></p>
-        <h4>Mot de passe:</h4>
-        <p><?php echo " " .$_SESSION['Mdp']?></p>
+        <h4>Numéro de carte:</h4>
+        <p><?php echo " " .$_SESSION['num_carte']?></p>
+        <h4>Date d'expiration:</h4>
+        <p><?php echo " " .$_SESSION['date_exp']?></p>
+        <h4>CVV:</h4>
+        <p><?php echo " " .$_SESSION['cvv']?></p>
+        <h4>Type de carte:</h4>
+        <p><?php echo " " .$_SESSION['type_carte']?></p>
+        <h4>Nom propriétaire de la carte:</h4>
+        <p><?php echo " " .$_SESSION['nom_carte']?></p>
       </div>
         
     </div>
