@@ -283,3 +283,7 @@
         
             </div>
     </div>
+
+<footer>
+  <p>&copy; Amajaune Copyright</p>  
+</footer>
