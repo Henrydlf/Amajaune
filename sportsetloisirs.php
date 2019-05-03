@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
         <li><a href="main_page.php">Accueuil</a></li>
         <li><a href="livres.php">Livres</a></li>
-        <li><a href="musiques.php">Musiques</a></li>
+        <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
         <li class="active"><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
