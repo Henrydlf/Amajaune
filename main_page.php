@@ -41,7 +41,17 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
 
       	<!--CONNEXION-->
-        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?></a></li>
+      	<ul id="menu-demo2">
+        <li><a href="form_connection.php">Mon Copte<span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?></a>
+        <ul>
+			<li><a href="#">lien sous menu 1</a></li>
+			<li><a href="#">lien sous menu 1</a></li>
+			<li><a href="#">lien sous menu 1</a></li>
+			<li><a href="#">lien sous menu 1</a></li>
+		</ul>
+        </li>
+        </ul>
+
         <!--PANIER-->
         <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>
