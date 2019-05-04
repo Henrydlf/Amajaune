@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Amajaune 51</title>
+  <title>Musiques</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -34,7 +34,7 @@ session_start();
       <ul class="nav navbar-nav">
         <li><a href="main_page.php">Accueuil</a></li>
         <li><a href="livres.php">Livres</a></li>
-        <li><a href="musique.php">Musiques</a></li>
+        <li class="active"><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
