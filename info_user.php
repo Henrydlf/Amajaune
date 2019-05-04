@@ -102,7 +102,7 @@ session_start();
 
     <div class="col-sm-9">
 
-     	<div class="panel-body"><img src="images_main/galibalax.jpg" class="img-responsive" style="width:20%" alt="Image"></div>
+     	<div class="panel-body"><img src="images_main/<?php echo $_SESSION['photo']; ?>" class="img-responsive" style="width:20%" alt="Image"></div>
 
       <div style="margin-left: 25px">
       	<h4>Identifiant:</h4>
@@ -126,11 +126,11 @@ session_start();
 
   <?php 
   $hFichier = isset($_POST["hFichier"])? $_POST["hFichier"] : "";
-
-  try{
-			  $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
-			}
-
+if($hFichier != '')
+{
+	try{
+			$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+		}
 			catch (Exception $e){
 	    		die('Erreur : ' . $e->getMessage());
 	    	}
@@ -139,6 +139,10 @@ session_start();
 			$sql=$bdd->prepare($requete);
 			$sql->execute();
 			$resultat = $sql->fetch();
+			$_SESSION['photo']=$hFichier;
+
+}
+  
   ?>
 
 </div>
