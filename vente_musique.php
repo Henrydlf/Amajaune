@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$categorie="livre";
+$categorie = "musique";
 ?>
 
 <!DOCTYPE html>
@@ -89,13 +89,16 @@ $categorie="livre";
 		<div class="col-sm-3 sidenav" style= "background-color: white; height: 500px; width: 250px"  >
 		  <h4>Categories de vente</h4>
 		  <ul class="nav nav-pills nav-stacked">
-		  	<li class="active"><a href="#section2">Livres</a></li>
+		    <li><a href="form_vente.php">Livres</a></li>
         <li><a href="vente_vetements.php">Vetements</a></li>
-		    <li><a href="vente_musique.php">Musique</a></li>
-		    <li><a href="vente_sel.php">Sports et Loisirs</a></li>
+        <li class="active"><a href="#section2">Musique</a></li>
+        <li><a href="vente_sel.php">Sports et Loisirs</a></li>
 		  </ul><br>
 		</div>
-    <h2 style="margin-left:275px">Mettre en vente un livre</h2>
+	</div>
+</div>
+
+	<h2 style="margin-left:275px">Mettre en vente un album</h2>
 
     <div style="margin-left: 300px; margin-top: 25px">
       <form action="init_vente.php" method="post">
@@ -117,7 +120,7 @@ $categorie="livre";
         </div>
       </form>
     </div>
-	</div>
+  </div>
 </div>
 
 </body>
