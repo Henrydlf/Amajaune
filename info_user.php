@@ -20,7 +20,7 @@ session_start();
     /* Set gray background color and 100% height */
     .sidenav {
       background-color: #f1f1f1;
-      height: 100%;
+      height: 700px;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -105,27 +105,50 @@ session_start();
      	<div class="panel-body"><img src="images_main/<?php echo $_SESSION['photo']; ?>" class="img-responsive" style="width:20%" alt="Image"></div>
 
       <div style="margin-left: 25px">
-      	<h4>Identifiant:</h4>
-        <p><?php echo " " .$_SESSION['Identifiant']?></p>
-        <h4>Adresse mail:</h4>
-        <p><?php echo " " .$_SESSION['Mail']?></p>
-        <h4>Nom:</h4>
-        <p><?php echo " " .$_SESSION['Nom']?></p>
-        <h4>Prénom:</h4>
-        <p><?php echo " " .$_SESSION['Prenom']?></p>
-        <h4>Mot de passe:</h4>
-        <p><?php echo " " .$_SESSION['Mdp']?></p>
-      </div>
+   
+		<form action="info_user.php" method="post">
 
-      <div class="custom-file">
-      	<form action="info_user.php" method="post">
-		  <input type="file" class="custom-file-input" id="hFichier" name="hFichier" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
-		  <label class="custom-file-label" for="hFichier">Sélectionner un fichier</label> <br><br>
-		  <input type="submit" value="Enregistrer" class="btn float-right btn-success"> 
-		</form><br>
+			<input type="file" class="custom-file-input" id="hFichier" name="hFichier" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
+		  <label class="custom-file-label" for="hFichier">Modifier photo de profil</label> <br><br>
+
+            <h4>Identifiant:</h4>
+              <div class="input-group form-group">
+            <input type="text" class="form-control" name="Identifiant" placeholder="<?php echo " " .$_SESSION['Identifiant']?>">
+          </div>
+
+          <h4>Adresse mail:</h4>  
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="Mail" placeholder="<?php echo " " .$_SESSION['Mail']?>">
+          </div>
+
+            <h4>Nom:</h4>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="date_exp" placeholder="<?php echo " " .$_SESSION['Nom']?>">
+          </div>
+
+          <h4>Prénom:</h4>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="Prenom" placeholder="<?php echo " " .$_SESSION['Prenom']?>">
+          </div>
+
+          <h4>Mot de passe:</h4>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="Mdp" placeholder="<?php echo " " .$_SESSION['Mdp']?>">
+          </div>
+
+          <div class="form-group">
+            <input type="submit" value="Enregistrer" class="btn float-right btn-success">
+          </div>
+        </form>
 
   <?php 
   $hFichier = isset($_POST["hFichier"])? $_POST["hFichier"] : "";
+  $Identifiant = isset($_POST["Identifiant"])? $_POST["Identifiant"] : "";
+  $Mail = isset($_POST["Mail"])? $_POST["Mail"] : "";
+  $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
+  $Prenom = isset($_POST["Prenom"])? $_POST["Prenom"] : "";
+  $Mdp = isset($_POST["Mdp"])? $_POST["Mdp"] : "";
+
 if($hFichier != '')
 {
 	try{
@@ -142,7 +165,91 @@ if($hFichier != '')
 	$_SESSION['photo']=$hFichier;
 }
   
+if($Identifiant != '')
+{
+	try{
+		$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
+	catch (Exception $e){
+  	die('Erreur : ' . $e->getMessage());
+  }
+
+	$requete = "UPDATE utilisateurs SET Identifiant='".$Identifiant."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
+	$_SESSION['Identifiant']=$Identifiant;
+}
+
+if($Mail != '')
+{
+	try{
+		$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
+	catch (Exception $e){
+  	die('Erreur : ' . $e->getMessage());
+  }
+
+	$requete = "UPDATE utilisateurs SET Mail='".$Mail."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
+	$_SESSION['Mail']=$Mail;
+}
+
+if($Nom != '')
+{
+	try{
+		$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
+	catch (Exception $e){
+  	die('Erreur : ' . $e->getMessage());
+  }
+
+	$requete = "UPDATE utilisateurs SET Nom='".$Nom."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
+	$_SESSION['Nom']=$Nom;
+}
+
+if($Prenom != '')
+{
+	try{
+		$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
+	catch (Exception $e){
+  	die('Erreur : ' . $e->getMessage());
+  }
+
+	$requete = "UPDATE utilisateurs SET Prenom='".$Prenom."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
+	$_SESSION['Prenom']=$Prenom;
+}
+
+if($Mdp != '')
+{
+	try{
+		$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
+	catch (Exception $e){
+  	die('Erreur : ' . $e->getMessage());
+  }
+
+	$requete = "UPDATE utilisateurs SET Mdp='".$Mdp."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
+	$_SESSION['Mdp']=$Mdp;
+}
   ?>
+
+
+
+
+
 
 </div>
         
