@@ -53,14 +53,35 @@ session_start();
         <li><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
-        <li><a href="spotsetloisirs.php">Sports et loisir</a></li>
+        <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
-      	<!--CONNEXION-->
-        <li class="active"><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?></a></li>
-        <!--PANIER-->
-        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <!--CONNEXION-->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <?php if($_SESSION){
+            ?>
+            <span class="glyphicon glyphicon-user"></span>
+            <?php
+              echo " " .$_SESSION['Identifiant'];
+            ?>
+            <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="info_user.php">Mes informations</a></li>
+                <li class="divider"></li>
+                <li><a href="deconnexion.php">Deconnexion</a></li>
+              </ul>
+            <?php
+            }
+            else{
+            ?>
+          </a>
+          <li><a href="form_connection.php">Se connecter</a></li>
+          <?php } ?>
+        </li>
+        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a></li>
       </ul>
     </div>
   </div>
@@ -72,7 +93,10 @@ session_start();
       <h4>Informations utilisateur</h4>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section2">Modifier mes informations personelles</a></li>
+        <?php if($_SESSION['Type'] == "Acheteur")
+        {?>
         <li><a href="info_userpay.php">Modifier mes informations de paiement</a></li>
+      <?php } ?>
       </ul><br>
     </div>
 
