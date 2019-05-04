@@ -38,22 +38,21 @@ session_start();
         <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="spotsetloisirs.php">Sports et loisir</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <!--ul class="nav navbar-nav navbar-right"-->
 
       	<!--CONNEXION-->
-      	<ul id="menu-demo2">
-        <li><a href="form_connection.php">Mon Copte<span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?></a>
-        <ul>
-			<li><a href="#">lien sous menu 1</a></li>
-			<li><a href="#">lien sous menu 1</a></li>
-			<li><a href="#">lien sous menu 1</a></li>
-			<li><a href="#">lien sous menu 1</a></li>
-		</ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?>  <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="form_connection.php">Se connnecter</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="deconnexion.php">Deconnexion</a></li>
+          </ul>
         </li>
-        </ul>
-
-        <!--PANIER-->
-        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a></li>
       </ul>
     </div>
   </div>
