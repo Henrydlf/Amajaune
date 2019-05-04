@@ -121,6 +121,7 @@ session_start();
       	<form action="info_user.php" method="post">
 		  <input type="file" class="custom-file-input" id="hFichier" name="hFichier" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
 		  <label class="custom-file-label" for="hFichier">Sélectionner un fichier</label>
+		  <input type="submit" value="Enregistrer" class="btn float-right login_btn">
 		</form>
 
   <?php 
@@ -134,7 +135,7 @@ session_start();
 	    		die('Erreur : ' . $e->getMessage());
 	    	}
 
-			$requete = "UPDATE utilisateurs SET photo='".$hFichier."' WHERE Identifiant='".$_SESSION['Identifiants']."'";  
+			$requete = "UPDATE utilisateurs SET photo='".$hFichier."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
 			$sql=$bdd->prepare($requete);
 			$sql->execute();
 			$resultat = $sql->fetch();
