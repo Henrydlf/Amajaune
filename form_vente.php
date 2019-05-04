@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$categorie="livre";
 ?>
 
 <!DOCTYPE html>
@@ -105,10 +106,11 @@ session_start();
           <input type="text" class="form-control" name="prix" placeholder="Prix">
         </div>
         <div class="input-group form-group">
-          <input type="text" class="form-control" name="image" placeholder="Image">  
+          <input type="file" class="custom-file-input" id="image" name="image" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
+          <label class="custom-file-label" for="image">Ajouter une photo</label> <br><br>
         </div>
         <div class="input-group form-group">
-          <input style="display: none" type="text" class="form-control" name="categorie" value="livre">  
+          <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>
         </div>
         <div class="form-group">
             <input type="submit" value="Vendre" class="btn float-right login_btn">
