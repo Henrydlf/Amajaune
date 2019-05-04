@@ -66,7 +66,7 @@ session_start();
   </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" style = "margin-top: -25px">
   <div class="row content">
     <div class="col-sm-3 sidenav">
       <h4>Informations utilisateur</h4>

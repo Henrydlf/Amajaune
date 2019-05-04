@@ -87,7 +87,7 @@ session_start();
   </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" style = "margin-top: -25px">
   <div class="row content">
     <div class="col-sm-3 sidenav">
       <h4>Informations utilisateur</h4>
@@ -129,18 +129,17 @@ session_start();
 if($hFichier != '')
 {
 	try{
-			$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
-		}
-			catch (Exception $e){
-	    		die('Erreur : ' . $e->getMessage());
-	    	}
+		$bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
+	catch (Exception $e){
+  	die('Erreur : ' . $e->getMessage());
+  }
 
-			$requete = "UPDATE utilisateurs SET photo='".$hFichier."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
-			$sql=$bdd->prepare($requete);
-			$sql->execute();
-			$resultat = $sql->fetch();
-			$_SESSION['photo']=$hFichier;
-
+	$requete = "UPDATE utilisateurs SET photo='".$hFichier."' WHERE Identifiant='".$_SESSION['Identifiant']	."'";  
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
+	$_SESSION['photo']=$hFichier;
 }
   
   ?>
