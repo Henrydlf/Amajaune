@@ -120,9 +120,9 @@ session_start();
       <div class="custom-file">
       	<form action="info_user.php" method="post">
 		  <input type="file" class="custom-file-input" id="hFichier" name="hFichier" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
-		  <label class="custom-file-label" for="hFichier">Sélectionner un fichier</label>
-		  <input type="submit" value="Enregistrer" class="btn float-right login_btn">
-		</form>
+		  <label class="custom-file-label" for="hFichier">Sélectionner un fichier</label> <br><br>
+		  <input type="submit" value="Enregistrer" class="btn float-right btn-success"> 
+		</form><br>
 
   <?php 
   $hFichier = isset($_POST["hFichier"])? $_POST["hFichier"] : "";
