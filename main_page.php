@@ -64,7 +64,21 @@ session_start();
           <li><a href="form_connection.php">Se connecter</a></li>
           <?php } ?>
         </li>
-        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a></li>
+        <li>
+          <?php 
+            if($_SESSION){
+              if($_SESSION['Type'] == "Acheteur")
+              {?>
+                <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
+              <?php }
+              else if($_SESSION['Type'] == "Vendeur")
+              {?>
+                <a href="form_vente.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
+              <?php }
+            }
+          ?>
+          
+        </li>
       </ul>
     </div>
   </div>
