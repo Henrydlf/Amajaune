@@ -78,7 +78,7 @@ session_start();
 
     <div class="col-sm-9">
 
-     	<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:20%" alt="Image"></div>
+     	<div class="panel-body"><img src="images_main/galibalax.jpg" class="img-responsive" style="width:20%" alt="Image"></div>
 
       <div style="margin-left: 25px">
       	<h4>Identifiant:</h4>
@@ -92,6 +92,31 @@ session_start();
         <h4>Mot de passe:</h4>
         <p><?php echo " " .$_SESSION['Mdp']?></p>
       </div>
+
+      <div class="custom-file">
+      	<form action="info_user.php" method="post">
+		  <input type="file" class="custom-file-input" id="hFichier" name="hFichier" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
+		  <label class="custom-file-label" for="hFichier">Sélectionner un fichier</label>
+		</form>
+
+  <?php 
+  $hFichier = isset($_POST["hFichier"])? $_POST["hFichier"] : "";
+
+  try{
+			  $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+			}
+
+			catch (Exception $e){
+	    		die('Erreur : ' . $e->getMessage());
+	    	}
+
+			$requete = "UPDATE utilisateurs SET photo='".$hFichier."' WHERE Identifiant='".$_SESSION['Identifiants']."'";  
+			$sql=$bdd->prepare($requete);
+			$sql->execute();
+			$resultat = $sql->fetch();
+  ?>
+
+</div>
         
     </div>
 </div>
