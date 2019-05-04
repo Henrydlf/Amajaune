@@ -80,16 +80,132 @@ session_start();
 
 
       <div style="margin-left: 25px">
-        <h4>Numéro de carte:</h4>
-        <p><?php echo " " .$_SESSION['num_carte']?></p>
-        <h4>Date d'expiration:</h4>
-        <p><?php echo " " .$_SESSION['date_exp']?></p>
-        <h4>CVV:</h4>
-        <p><?php echo " " .$_SESSION['cvv']?></p>
-        <h4>Type de carte:</h4>
-        <p><?php echo " " .$_SESSION['type_carte']?></p>
-        <h4>Nom propriétaire de la carte:</h4>
-        <p><?php echo " " .$_SESSION['nom_carte']?></p>
+
+          <form action="info_userpay.php" method="post">
+
+            <h4>Type de cartre:</h4>
+              <select size="1" name="type_carte">
+                <option value="aucun" selected>carte actuelle:<?php echo " " .$_SESSION['type_carte']?></option>
+                <option value="visa">visa</option>
+                <option value="mastercard">mastercard</option>
+                <option value="american express">american express</option>
+              </select>
+
+          <h4>Numéro de carte:</h4>  
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="num_carte" placeholder="<?php echo " " .$_SESSION['num_carte']?>">
+          </div>
+
+            <h4>Date d'expiration:</h4>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="date_exp" placeholder="<?php echo " " .$_SESSION['date_exp']?>">
+          </div>
+
+          <h4>Nom du propriétaire de la carte:</h4>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="nom_carte" placeholder="<?php echo " " .$_SESSION['nom_carte']?>">
+          </div>
+
+          <h4>CVV:</h4>
+          <div class="input-group form-group">
+            <input type="text" class="form-control" name="cvv" placeholder="<?php echo " " .$_SESSION['cvv']?>">
+          </div>
+
+          <div class="form-group">
+            <input type="submit" value="Enregistrer" class="btn float-right btn-success">
+          </div>
+        </form>
+<?php
+        $type_carte = isset($_POST["type_carte"])? $_POST["type_carte"] : "";
+        $num_carte = isset($_POST["num_carte"])? $_POST["num_carte"] : "";
+        $date_exp = isset($_POST["date_exp"])? $_POST["date_exp"] : "";
+        $nom_carte = isset($_POST["nom_carte"])? $_POST["nom_carte"] : "";
+        $cvv = isset($_POST["cvv"])? $_POST["cvv"] : "";
+if($type_carte != 'aucun')
+{
+  try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+      catch (Exception $e){
+          die('Erreur : ' . $e->getMessage());
+        }
+
+      $requete = "UPDATE utilisateurs SET type_carte='".$type_carte."' WHERE Identifiant='".$_SESSION['Identifiant'] ."'";  
+      $sql=$bdd->prepare($requete);
+      $sql->execute();
+      $resultat = $sql->fetch();
+      $_SESSION['type_carte']=$type_carte;
+}
+
+if($num_carte != '')
+{
+  try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+      catch (Exception $e){
+          die('Erreur : ' . $e->getMessage());
+        }
+
+      $requete = "UPDATE utilisateurs SET num_carte='".$num_carte."' WHERE Identifiant='".$_SESSION['Identifiant'] ."'";  
+      $sql=$bdd->prepare($requete);
+      $sql->execute();
+      $resultat = $sql->fetch();
+      $_SESSION['num_carte']=$num_carte;
+}
+
+if($date_exp != '')
+{
+  try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+      catch (Exception $e){
+          die('Erreur : ' . $e->getMessage());
+        }
+
+      $requete = "UPDATE utilisateurs SET date_exp='".$date_exp."' WHERE Identifiant='".$_SESSION['Identifiant'] ."'";  
+      $sql=$bdd->prepare($requete);
+      $sql->execute();
+      $resultat = $sql->fetch();
+      $_SESSION['date_exp']=$date_exp;
+}
+
+if($nom_carte != '')
+{
+  try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+      catch (Exception $e){
+          die('Erreur : ' . $e->getMessage());
+        }
+
+      $requete = "UPDATE utilisateurs SET nom_carte='".$nom_carte."' WHERE Identifiant='".$_SESSION['Identifiant'] ."'";  
+      $sql=$bdd->prepare($requete);
+      $sql->execute();
+      $resultat = $sql->fetch();
+      $_SESSION['nom_carte']=$nom_carte;
+}
+
+if($cvv != '')
+{
+  try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+      catch (Exception $e){
+          die('Erreur : ' . $e->getMessage());
+        }
+
+      $requete = "UPDATE utilisateurs SET cvv='".$cvv."' WHERE Identifiant='".$_SESSION['Identifiant'] ."'";  
+      $sql=$bdd->prepare($requete);
+      $sql->execute();
+      $resultat = $sql->fetch();
+      $_SESSION['cvv']=$cvv;
+}
+
+  
+  ?>
+
+
+
       </div>
         
     </div>
