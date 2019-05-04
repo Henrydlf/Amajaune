@@ -1,35 +1,18 @@
 <?php 
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Amajaune 51</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="main_page.css" rel="stylesheet" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <!--<style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #ffff00;
-      padding: 25px;
-    }
-  </style>-->
+  <link rel="shortcut icon" href="favicon.ico" >
 
 </head>
 
@@ -40,33 +23,35 @@
   <div class="container text-center">
     <!--TITRE DU CITE----------------------------------------------------------------------------------------->
     <h1> 
-    <div class="color">Amajaune</div> 
-    </h1>    
-    <p>Plaisir, copains & Boissons</p>
+    <div class="color">Amajaune 51</div> 
+    </h1>
   </div>
 </div>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Accueuil</a></li>
-        <li><a href="#">Livres</a></li>
-        <li><a href="#">Musiques</a></li>
-        <li><a href="#">Vêtements</a></li>
-        <li><a href="#">Sports et loisir</a></li>
+        <li><a href="livres.php">Livres</a></li>
+        <li><a href="musique.php">Musiques</a></li>
+        <li><a href="vetements.php">Vêtements</a></li>
+        <li><a href="spotsetloisirs.php">Sports et loisir</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
       	<!--CONNEXION-->
-        <li><a href="form_connection_bis.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
+      	<ul id="menu-demo2">
+        <li><a href="form_connection.php">Mon Copte<span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?></a>
+        <ul>
+			<li><a href="#">lien sous menu 1</a></li>
+			<li><a href="#">lien sous menu 1</a></li>
+			<li><a href="#">lien sous menu 1</a></li>
+			<li><a href="#">lien sous menu 1</a></li>
+		</ul>
+        </li>
+        </ul>
+
         <!--PANIER-->
         <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>
@@ -109,6 +94,6 @@
 
 
 
-<footer class="container-fluid text-center">
-  <p>Amajaune Copyright</p>  
+<footer>
+  <p>&copy; Amajaune Copyright</p>  
 </footer>
