@@ -95,8 +95,6 @@ $categorie = "vetements";
         <li><a href="vente_sel.php">Sports et Loisirs</a></li>
 		  </ul><br>
 		</div>
-	</div>
-</div>
 
 	<h2 style="margin-left:275px">Mettre en vente un vetement</h2>
 
@@ -114,6 +112,14 @@ $categorie = "vetements";
         </div>
         <div class="input-group form-group">
           <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>
+        </div>
+        <div class="input-group form-group">
+          <select name="sexe">
+            <option placeholder="Sexe"></option>
+            <option>Homme</option>
+            <option>Femme</option>
+            <option>Enfant</option>
+          </select>
         </div>
         <div class="form-group">
             <input type="submit" value="Vendre" class="btn float-right login_btn">

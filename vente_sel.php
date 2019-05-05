@@ -95,8 +95,6 @@ $categorie = "sports et loisirs";
         <li class="active"><a href="#section2">Sports et Loisirs</a></li>
 		  </ul><br>
 		</div>
-	</div>
-</div>
 
 	<h2 style="margin-left:275px">Mettre en vente un produit Sports et Loisirs</h2>
 

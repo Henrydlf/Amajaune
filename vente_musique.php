@@ -95,8 +95,6 @@ $categorie = "musique";
         <li><a href="vente_sel.php">Sports et Loisirs</a></li>
 		  </ul><br>
 		</div>
-	</div>
-</div>
 
 	<h2 style="margin-left:275px">Mettre en vente un album</h2>
 
