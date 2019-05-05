@@ -120,4 +120,3 @@ session_start();
 <footer class="container-fluid text-center">
   <p>&copy; Amajaune Copyright</p>  
 </footer>
-

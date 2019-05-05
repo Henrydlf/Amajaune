@@ -85,35 +85,52 @@ session_start();
 </nav>
 
 
+<?php
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+  }
+  catch (Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
+
+  $flivre = $bdd->query('SELECT * FROM produits WHERE Categorie="livres" ORDER BY Nb_achat DESC  ');
+  $alivre = $flivre->fetch();
+  $fmusique = $bdd->query('SELECT * FROM produits WHERE Categorie="musique" ORDER BY Nb_achat DESC ');
+  $amusique = $fmusique->fetch();
+  $fvetement = $bdd->query('SELECT * FROM produits WHERE Categorie="vetements" ORDER BY Nb_achat DESC ');
+  $avetement = $fvetement->fetch();
+  $fsportetloisir = $bdd->query('SELECT * FROM produits WHERE Categorie="sports et loisirs" ORDER BY Nb_achat DESC ');
+  $asportetloisir = $fsportetloisir->fetch();
+?>
 
 <div class="container">    
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">VENTE FLASH LIVRE</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
+        <div class="panel-body"><img src="images_main/<?php echo $alivre['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-footer"><?php echo $alivre['Nom']; ?></div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">VENTE FLASH MUSIQUE</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
+        <div class="panel-body"><img src="images_main/<?php echo $amusique['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-footer"><?php echo $amusique['Nom']; ?></div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">VENTE FLASH VÊTEMENTS</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
+        <div class="panel-body"><img src="images_main/<?php echo $avetement['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-footer"><?php echo $avetement['Nom']; ?></div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
         <div class="panel-heading">VENTE FLASH SPORTS ET LOISIRS</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
+        <div class="panel-body"><img src="images_main/<?php echo $asportetloisir['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-footer"><?php echo $asportetloisir['Nom']; ?></div>
       </div>
     </div>
   </div>
