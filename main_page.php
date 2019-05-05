@@ -109,32 +109,49 @@ try{
       <div class="panel panel-primary">
         <div class="panel-heading">VENTE FLASH LIVRE</div>
         <div class="panel-body"><img src="images_main/<?php echo $alivre['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
-        <div class="panel-footer"><?php echo $alivre['Nom']; ?></div>
+        <div class="panel-footer">
+          <div><?php echo $alivre ['Nom'];?> - <?php echo $alivre ['Prix'];?>€</div>
+          <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+        </div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">VENTE FLASH MUSIQUE</div>
         <div class="panel-body"><img src="images_main/<?php echo $amusique['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
-        <div class="panel-footer"><?php echo $amusique['Nom']; ?></div>
+        <div class="panel-footer">
+          <div><?php echo $amusique ['Nom'];?> - <?php echo $amusique ['Prix'];?>€</div>
+          <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+        </div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">VENTE FLASH VÊTEMENTS</div>
         <div class="panel-body"><img src="images_main/<?php echo $avetement['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
-        <div class="panel-footer"><?php echo $avetement['Nom']; ?></div>
-      </div>
+        <div class="panel-footer">
+          <div><?php echo $avetement ['Nom'];?> - <?php echo $avetement ['Prix'];?>€</div>
+          <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+        </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
         <div class="panel-heading">VENTE FLASH SPORTS ET LOISIRS</div>
         <div class="panel-body"><img src="images_main/<?php echo $asportetloisir['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
-        <div class="panel-footer"><?php echo $asportetloisir['Nom']; ?></div>
-      </div>
+        <div class="panel-footer">
+          <div><?php echo $asportetloisir ['Nom'];?> - <?php echo $asportetloisir ['Prix'];?>€</div>
+          <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+        </div>
     </div>
   </div>
 </div><br>
+
+</div>
+</div>
+</ul>
+</div>
+</div>
+</nav>
 
 
 
@@ -142,13 +159,14 @@ try{
   <p>&copy; Amajaune Copyright</p>  
 </footer>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-  <script>
-    function btn_connexion(){
-      if (!$_SESSION)
-      {
-          header('Location: form_connection.php');
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script>
+      function btn_connexion(){
+        if (!$_SESSION)
+        {
+            header('Location: form_connection.php');
+        }
       }
-    }
-    </script>
+  </script>
 </html>
