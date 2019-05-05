@@ -1,5 +1,26 @@
 <?php
 session_start(); 
+  $_SESSION['aff_prod'] = isset($_POST["aff_prod"])? $_POST["aff_prod"] : "";
+
+  try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+
+    catch (Exception $e){
+      die('Erreur : ' . $e->getMessage());
+    }
+
+    $requete = "SELECT * FROM `produits` WHERE Nom = '".$_SESSION['aff_prod']."'";
+    $sql=$bdd->prepare($requete);
+    $sql->execute();
+    $resultat = $sql->fetch();
+
+    $_SESSION['nom_prod']=$resultat['Nom'];
+    $_SESSION['image_prod']=$resultat['Image'];
+    $_SESSION['prix_prod']=$resultat['Prix'];
+    $_SESSION['desc_prod']=$resultat['Description'];
+    $_SESSION['vendeur_prod']=$resultat['Vendeur'];
+
 ?>
 
 <!DOCTYPE html>
@@ -81,57 +102,42 @@ session_start();
 </nav>
 
 
-<div class="container text-center">    
-  <h3><?php echo $_SESSION['produits'] ?></h3><br>
+<div class="container text-center"> 
   <div class="row">
     <div class="col-sm-4"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      
-       <p>Prix à l'unité</p>
-      
+      <img src="images_main/<?php echo $_SESSION['image_prod'] ?>" class="img-responsive">
     </div>
-    <div class="col-sm-4">
-      <div class="well well-sm">
-       <p>Titre,Auteur</p>
+    <div class="well well-lg" style="margin-top: 15px">
+      <h2><?php echo $_SESSION['nom_prod']; ?></h2><br>
+      <div style="margin-top: 20px" class="well well-sm">
+       <h3><?php echo $_SESSION['desc_prod']?></h3>
       </div>
-      <div class="well well-lg">
-       <p>Description du produit</p>
+      <div class="col-sm-4">
+       <h3>Prix:    <?php echo $_SESSION['prix_prod'] ?> €</h3>
       </div>
-      
-    </div>
-
-
- <div class="btn-group">
-  <button type="button" class="btn btn-default">Quantité</button>
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
-   <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu">
-     <li><a href="#" title="1">1</a></li>
-     <li><a href="#" title="2">2</a></li>
-     <li><a href="#" title="3">3</a></li>
-     <li><a href="#" title="4">4</a></li>
-     <li><a href="#" title="5">5</a></li>
-     <li><a href="#" title="6">6</a></li>
-     <li><a href="#" title="7">7</a></li>
-     <li><a href="#" title="8">8</a></li>
-     <li><a href="#" title="9">9</a></li>
-     <li><a href="#" title="10">10</a></li>
-     
-  </ul>
-</div>
-  <br><br><br><br>
-
-    <div class="text-center">
-    <a href="panier.php" class="btn btn-primary btn-lg" role="button">Ajouter au panier</a>
-    </button>
-    </div>
-    
+      <div class="text-center">
+        <a href="panier.php" class="btn btn-primary btn-lg" role="button">Ajouter au panier</a>
+      </div>
+    </div>    
   </div>
 </div><br>
 
-
-
+<?php
+  if(!isset($_SESSION['panier'])) 
+  { 
+      /* Initialisation du panier */ 
+      $_SESSION['panier'] = array(); 
+      /* Subdivision du panier */ 
+      $_SESSION['panier']['nom'] = array(); 
+      $_SESSION['panier']['taille'] = array(); 
+      $_SESSION['panier']['prix'] = array(); 
+      $_SESSION['panier']['image'] = array(); 
+  } 
+  array_push($_SESSION['panier']['nom'],$_SESSION['nom_prod']); 
+  array_push($_SESSION['panier']['prix'],$_SESSION['prix_prod']); 
+  array_push($_SESSION['panier']['image'],$_SESSION['image_prod']); 
+  $_SESSION['quantite']=1;
+?>
 
 <footer>
   <p>&copy; Amajaune Copyright</p>  

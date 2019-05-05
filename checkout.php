@@ -258,7 +258,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <button type="button" class="btn btn-primary btn-success">Commander</button>
+                                    <a href="main_page.php" type="button" onclick="verif_achat()" class="btn btn-primary btn-success">Commander</a>
                                 </div>
                             </div>
                         </div>
@@ -273,6 +273,15 @@
             </div>
     </div>
 
+
+
 <footer>
   <p>&copy; Amajaune Copyright</p>  
 </footer>
+
+<script type="text/javascript">
+  function verif_achat()
+  {
+    alert("Achat reussie");
+  }
+</script>

@@ -102,7 +102,11 @@ try{
             <div class="panel panel-primary">
               <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
               <div class="panel-footer">
-                <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
+                <form action="pageprod.php" method="post">
+                  <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?> €</div>
+                  <input type="text" class="form-control" name="aff_prod" id="aff_prod" style="display: none;" value="<?php echo $donnees['Nom']; ?>">
+                  <div class="panel-footer"><input type="submit" value="Voir details" class="btn btn-block btn-success"></div>
+                </form>
                 <form action="musique.php" method="post">
                   <input type="text" class="form-control" name="panier" id="panier" style="display: none;" value="<?php echo $donnees['Nom']; ?>">
                   <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success" onClick="verif_vente(<?php echo $donnees['Nom']; ?>)"></div>
@@ -153,7 +157,8 @@ $reponse->closeCursor();
     array_push($_SESSION['panier']['nom'],$resultat['Nom']); 
     array_push($_SESSION['panier']['taille'],$resultat['Taille']); 
     array_push($_SESSION['panier']['prix'],$resultat['Prix']); 
-    array_push($_SESSION['panier']['image'],$resultat['Image']); 
+    array_push($_SESSION['panier']['image'],$resultat['Image']);
+    array_push($_SESSION['panier']['quantite'], 1);
   }
 ?>
 
@@ -164,13 +169,6 @@ $reponse->closeCursor();
 </div>
 </div>
 </nav>
-
-<script type="text/javascript">
-  function verif_vente(msg1)
-  {
-    var msg = "le nombre est"+msg1;
-    alert("salut");
-  }
 </script>
 </body>
 </html>
