@@ -106,7 +106,10 @@ try{
             <div class="panel panel-primary">
              <!-- <div class="panel-heading"><?php echo $donnees ['Nom'];?></div> -->
               <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
-              <div class="panel-footer"> <?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€ </div>
+              <div class="panel-footer">
+                <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
+                <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+              </div>
             </div>
           </div>
 
