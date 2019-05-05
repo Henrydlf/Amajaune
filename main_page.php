@@ -104,7 +104,7 @@ try{
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">VENTE FLASH LIVRE</div>
-        <div class="panel-body"><img src="images_main/<?php echo $alivre['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $alivre['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
         <div class="panel-footer">
           <a onclick="afficher_prod()" href="pageprod.php" type="button"><?php 
             $_SESSION['produits'] = $alivre['Nom'];
@@ -116,7 +116,7 @@ try{
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
         <div class="panel-heading">VENTE FLASH MUSIQUE</div>
-        <div class="panel-body"><img src="images_main/<?php echo $amusique['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $amusique['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
         <div class="panel-footer">
           <div><?php echo $amusique ['Nom'];?> - <?php echo $amusique ['Prix'];?>€</div>
           <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
@@ -126,16 +126,17 @@ try{
     <div class="col-sm-4"> 
       <div class="panel panel-success">
         <div class="panel-heading">VENTE FLASH VÊTEMENTS</div>
-        <div class="panel-body"><img src="images_main/<?php echo $avetement['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $avetement['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
         <div class="panel-footer">
           <div><?php echo $avetement ['Nom'];?> - <?php echo $avetement ['Prix'];?>€</div>
           <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
         </div>
+      </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
         <div class="panel-heading">VENTE FLASH SPORTS ET LOISIRS</div>
-        <div class="panel-body"><img src="images_main/<?php echo $asportetloisir['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
+        <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $asportetloisir['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
         <div class="panel-footer">
           <div><?php echo $asportetloisir ['Nom'];?> - <?php echo $asportetloisir ['Prix'];?>€</div>
           <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>

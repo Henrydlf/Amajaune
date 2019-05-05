@@ -32,8 +32,8 @@ session_start();
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="main_page.php">Accueil</a></li>
-        <li><a href="livres.php">Livres</a></li>
+        <li><a href="main_page.php">Accueil</a></li>
+        <li class="active"><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
@@ -98,16 +98,15 @@ try{
 ?>
      
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
             <div class="panel panel-primary">
-              <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
+              <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
               <div class="panel-footer">
                 <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
                 <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
               </div>
             </div>
           </div>
-
 
 <?php  
   }

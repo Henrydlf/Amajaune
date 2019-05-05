@@ -111,6 +111,12 @@ session_start();
         {?>
         <li><a href="info_userpay.php">Modifier mes informations de paiement</a></li>
       <?php } ?>
+        <?php if($_SESSION['Type']=="Administrateur")
+        {?>
+          <li><a href="supp_vendeurs.php">Supprimer des vendeurs</a></li>
+        <?php } 
+        ?>
+
       </ul><br>
     </div>
 

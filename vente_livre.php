@@ -111,6 +111,9 @@ session_start();
         <div class="input-group form-group">
           <input type="text" class="form-control" id="categorie" name="categorie" value="livres" style="display: none;">
         </div>
+        <div class="input-group form-group">
+          <input type="text" class="form-control" id="vendeur" name="vendeur" value="<?php echo $_SESSION['Identifiant'] ?>" style="display: none;">
+        </div>
         <div class="form-group">
             <input type="submit" value="Vendre" class="btn float-right login_btn" onClick="verif_vente()">
         </div>

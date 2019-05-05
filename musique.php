@@ -32,9 +32,9 @@ session_start();
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="main_page.php">Accueil</a></li>
+        <li><a href="main_page.php">Accueil</a></li>
         <li><a href="livres.php">Livres</a></li>
-        <li><a href="musique.php">Musiques</a></li>
+        <li class="active"><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
@@ -82,37 +82,42 @@ session_start();
 
 <div class="container">    
   <div class="row">
-    <?php
-    try{
-      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
-    }
-    catch (Exception $e){
-      die('Erreur : ' . $e->getMessage());
-    }
 
-    $requete = "SELECT * FROM produits WHERE Categorie = 'musique'";
-    $reponse = $bdd->query($requete);
+<?php
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+  }
+  catch (Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
 
-    while ($donnees = $reponse->fetch()) {
-    ?>
-    <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
+  $requete = "SELECT * FROM produits WHERE Categorie = 'musique' ";
+  $reponse = $bdd->query($requete);
+
+  while ( $donnees = $reponse->fetch() ) {
+?>
+     
+
+      <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
               <div class="panel-footer">
-                  <a type=submit><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</a>
-                <form action="panier.php" method="post">
-                  <input type="text" class="form-control" name="panier" style="display: none;" value=<?php echo $donnees['Nom'] ?>>
-                  <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success"></div>
-                </form>
+                <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
+                <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
               </div>
             </div>
           </div>
-    <?php 
-      }
-      $reponse->closeCursor();
-    ?>
+
+<?php  
+  }
+
+$reponse->closeCursor();
+?>
+
   </div>
 </div><br>
+
+
 
 <script type="text/javascript">
   function afficher_prod(){

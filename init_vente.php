@@ -8,16 +8,21 @@
 	$sexe=isset($_POST["sexe"])? $_POST["sexe"] : "";
 	$couleur=isset($_POST["couleur"])? $_POST["couleur"] : "";
 	$taille=isset($_POST["taille"])? $_POST["taille"] : "";
+	$vendeur=isset($_POST["vendeur"])? $_POST["vendeur"] : "";
 	
-	$database = "amajaune";
+	try{
+	  $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+	}
 
-	$db_handle = mysqli_connect('localhost', 'root', '');
-	$db_found = mysqli_select_db($db_handle, $database);
+	catch (Exception $e){
+		die('Erreur : ' . $e->getMessage());
+	}
 
-	$sql = "INSERT INTO `produits` (`ID`, `Nom`, `Categorie`, `Prix`, `Image`, `Nb_achat`, `Description`, `Sexe`, `Couleur`, `Taille`) VALUES ('1001', '".$nom."','".$categorie."', '".$prix."','".$image."', '0','".$description."', '".$sexe."','".$couleur."', '".$taille."')";
+	$requete = "INSERT INTO `produits`(`ID`, `Nom`, `Categorie`, `Prix`, `Image`, `Nb_achat`, `Description`, `Sexe`, `Couleur`, `Taille`, `Vendeur`) VALUES ('1001', '".$nom."','".$categorie."', '".$prix."','".$image."', '0','".$description."', '".$sexe."','".$couleur."', '".$taille."', '".$vendeur."')";
 
-	$result = mysqli_query($db_handle, $sql);
-	mysqli_close($db_handle);
+	$sql=$bdd->prepare($requete);
+	$sql->execute();
+	$resultat = $sql->fetch();
 
 	if($categorie == "livres"){
 		header('Location: vente_livre.php');
