@@ -19,8 +19,5 @@
 	$result = mysqli_query($db_handle, $sql);
 	mysqli_close($db_handle);
 
-
-	echo '<script type="text/javascript">alert("TON TEXTE");</script>';
-
-	header('Location: form_vente.php');
+	header('Location: vente_livre.php');
 ?>

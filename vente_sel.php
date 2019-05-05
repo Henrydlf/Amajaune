@@ -73,7 +73,7 @@ session_start();
               <?php }
               else if($_SESSION['Type'] == "Vendeur")
               {?>
-                <a href="form_vente.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
+                <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
               <?php }
             }
           ?>
