@@ -1,9 +1,7 @@
-<?php	
-	include("form_vente.php");
-
+<?php
 	$nom=isset($_POST["name"])? $_POST["name"] : "";
 	$id=isset($_POST["id"])? $_POST["id"] : "";
-	//$categorie=isset($_POST["categorie"])? $_POST["categorie"] : "";
+	$categorie=isset($_POST["categorie"])? $_POST["categorie"] : "";
 	$prix=isset($_POST["prix"])? $_POST["prix"] : "";
 	$image=isset($_POST["image"])? $_POST["image"] : "";
 	$description=isset($_POST["description"])? $_POST["description"] : "";
@@ -20,4 +18,6 @@
 
 	$result = mysqli_query($db_handle, $sql);
 	mysqli_close($db_handle);
+
+	header('Location: vente_livre.php');
 ?>

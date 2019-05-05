@@ -1,6 +1,5 @@
 <?php 
 session_start();
-$categorie="livre";
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +73,7 @@ $categorie="livre";
               <?php }
               else if($_SESSION['Type'] == "Vendeur")
               {?>
-                <a href="form_vente.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
+                <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
               <?php }
             }
           ?>
@@ -107,18 +106,28 @@ $categorie="livre";
         </div>
         <div class="input-group form-group">
           <input type="file" class="custom-file-input" id="image" name="image" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
-          <label class="custom-file-label" for="image">Ajouter une photo</label> <br><br>
+          <label class="custom-file-label" for="image">Ajouter une photo</label> <br>
         </div>
         <div class="input-group form-group">
           <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>
         </div>
+        <div class="input-group form-group">
+          <input type="text" class="form-control" id="categorie" name="categorie" value="livres" style="display: none;">
+        </div>
         <div class="form-group">
-            <input type="submit" value="Vendre" class="btn float-right login_btn">
+            <input type="submit" value="Vendre" class="btn float-right login_btn" onClick="verif_vente()">
         </div>
       </form>
     </div>
 	</div>
 </div>
+
+<script type="text/javascript">
+  function verif_vente()
+  {
+    alert("Produit vendue");
+  }
+</script>
 
 </body>
 </html>

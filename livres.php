@@ -30,27 +30,55 @@ session_start();
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="main_page.php">Accueuil</a></li>
-        <li class="active"><a href="#">Livres</a></li>
+        <li><a href="main_page.php">Accueil</a></li>
+        <li class="active"><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
-      	<!--CONNEXION-->
-        <li><a href="form_connection.php"><span class="glyphicon glyphicon-user"></span><?php echo " " .$_SESSION['Identifiant']?></a></li>
-        <!--PANIER-->
-        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <!--CONNEXION-->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <?php if($_SESSION){
+            ?>
+            <span class="glyphicon glyphicon-user"></span>
+            <?php
+              echo " " .$_SESSION['Identifiant'];
+            ?>
+            <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="info_user.php">Mes informations</a></li>
+                <li class="divider"></li>
+                <li><a href="deconnexion.php">Deconnexion</a></li>
+              </ul>
+            <?php
+            }
+            else{
+            ?>
+          </a>
+          <li><a href="form_connection.php">Se connecter</a></li>
+          <?php } ?>
+        </li>
+        <li>
+          <?php 
+            if($_SESSION){
+              if($_SESSION['Type'] == "Acheteur")
+              {?>
+                <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
+              <?php }
+              else if($_SESSION['Type'] == "Vendeur")
+              {?>
+                <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
+              <?php }
+            }
+          ?>
+          
+        </li>
       </ul>
     </div>
   </div>
