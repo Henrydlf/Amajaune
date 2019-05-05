@@ -63,6 +63,7 @@
 					$_SESSION['panier']['taille'] = array(); 
 					$_SESSION['panier']['prix'] = array();
 					$_SESSION['panier']['image'] = array(); 
+					$_SESSION['panier']['quantite'] = array();
 				}
 
 				header('Location: main_page.php');

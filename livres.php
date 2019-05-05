@@ -153,6 +153,7 @@ $reponse->closeCursor();
     array_push($_SESSION['panier']['taille'],$resultat['Taille']); 
     array_push($_SESSION['panier']['prix'],$resultat['Prix']); 
     array_push($_SESSION['panier']['image'],$resultat['Image']); 
+    array_push($_SESSION['panier']['quantite'], 1);
   }
 ?>
 

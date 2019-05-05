@@ -154,9 +154,18 @@ $reponse->closeCursor();
     array_push($_SESSION['panier']['taille'],$resultat['Taille']); 
     array_push($_SESSION['panier']['prix'],$resultat['Prix']); 
     array_push($_SESSION['panier']['image'],$resultat['Image']); 
+    array_push($_SESSION['panier']['quantite'], 1);
+    
   }
 ?>
 
 <footer class="container-fluid text-center">
   <p>&copy; Amajaune Copyright</p>  
 </footer>
+</ul>
+</div>
+</div>
+</nav>
+</script>
+</body>
+</html>

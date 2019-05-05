@@ -97,15 +97,17 @@
                     </thead>
                     <tbody>
                       <?php
-                        for($i = 1; $i < sizeof($_SESSION['panier']['nom']); $i++)
+                        for($i = 0; $i < sizeof($_SESSION['panier']['nom']); $i++)
                         {
                       ?>
                         <tr>
                             <td><img  style="height: 100px" src="images_main/<?php echo $_SESSION['panier']['image'][$i] ?>"></td>
                             <td><?php echo $_SESSION['panier']['nom'][$i] ?></td>
                             <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right"><?php echo $_SESSION['panier']['prix'][$i]?> €</td>
+                            <form action="panier.php" method="post">
+                              <td><input class="form-control" type="text" value="<?php echo $_SESSION['panier']['quantite'][$i]; ?>" id="quantite" name="quantite"></td>
+                            <td><input type="submit" value="valider"></td></form>
+                            <td class="text-right"><?php $p=$_SESSION['panier']['prix'][$i]*$_SESSION['panier']['quantite'][$i]; echo $p; ?> €</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                         </tr>
                       <?php
@@ -117,7 +119,14 @@
                             <td></td>
                             <td></td>
                             <td>Sous-Total</td>
-                            <td class="text-right">255,90 €</td>
+                            <td class="text-right"><?php 
+                            $soustot = 0;
+                            for($i = 0; $i < sizeof($_SESSION['panier']['nom']); $i++)
+                            {
+                              $soustot = $soustot+$_SESSION['panier']['prix'][$i]*$_SESSION['panier']['quantite'][$i];
+                            }
+                              echo $soustot;
+                            ?> €</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -133,7 +142,7 @@
                             <td></td>
                             <td></td>
                             <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>346,90 €</strong></td>
+                            <td class="text-right"><strong><?php echo $tot = $soustot + 6.90 ?> €</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -156,6 +165,9 @@
 </div>
 </div>
 </nav>
+<?php
+  $_SESSION['panier']['quantite'][$i]=isset($_POST["quantite"])?$_POST["quantite"] : "";
+?>
 <!-- Footer -->
 <footer>
   <p>&copy; Amajaune Copyright</p>  

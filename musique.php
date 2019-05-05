@@ -153,7 +153,8 @@ $reponse->closeCursor();
     array_push($_SESSION['panier']['nom'],$resultat['Nom']); 
     array_push($_SESSION['panier']['taille'],$resultat['Taille']); 
     array_push($_SESSION['panier']['prix'],$resultat['Prix']); 
-    array_push($_SESSION['panier']['image'],$resultat['Image']); 
+    array_push($_SESSION['panier']['image'],$resultat['Image']);
+    array_push($_SESSION['panier']['quantite'], 1);
   }
 ?>
 
@@ -164,13 +165,6 @@ $reponse->closeCursor();
 </div>
 </div>
 </nav>
-
-<script type="text/javascript">
-  function verif_vente(msg1)
-  {
-    var msg = "le nombre est"+msg1;
-    alert("salut");
-  }
 </script>
 </body>
 </html>
