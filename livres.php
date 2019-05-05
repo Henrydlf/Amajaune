@@ -84,7 +84,25 @@ session_start();
   </div>
 </nav>
 
+<?php
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+  }
+  catch (Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
 
+  $requete = "SELECT * FROM produits";
+  $reponse = $bdd->query($requete);
+
+  while ( $donnees = $reponse->fetch() ) {
+?>
+    <p>Le nom de la musique est <?php echo $donnees ['Nom']; ?></p>
+<?php  
+  }
+
+$reponse->closeCursor();
+?>
 
 <div class="container">    
   <div class="row">
