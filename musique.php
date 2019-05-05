@@ -125,4 +125,3 @@ $reponse->closeCursor();
 <footer class="container-fluid text-center">
   <p>&copy; Amajaune Copyright</p>  
 </footer>
-
