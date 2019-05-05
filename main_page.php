@@ -77,7 +77,6 @@ session_start();
               <?php }
             }
           ?>
-          
         </li>
       </ul>
     </div>
@@ -110,7 +109,9 @@ try{
         <div class="panel-heading">VENTE FLASH LIVRE</div>
         <div class="panel-body"><img src="images_main/<?php echo $alivre['Image']?>" class="img-responsive" style="width:50%" alt="Image"></div>
         <div class="panel-footer">
-          <div><?php echo $alivre ['Nom'];?> - <?php echo $alivre ['Prix'];?>€</div>
+          <a onclick="afficher_prod()" href="pageprod.php" type="button"><?php 
+            $_SESSION['produits'] = $alivre['Nom'];
+            echo $alivre ['Nom'];?> - <?php echo $alivre ['Prix']; ?>€</a>
           <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
         </div>
       </div>
@@ -153,20 +154,8 @@ try{
 </div>
 </nav>
 
-
-
 <footer>
   <p>&copy; Amajaune Copyright</p>  
 </footer>
 </body>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <script>
-      function btn_connexion(){
-        if (!$_SESSION)
-        {
-            header('Location: form_connection.php');
-        }
-      }
-  </script>
 </html>

@@ -103,8 +103,11 @@ session_start();
           <div class="panel panel-primary">
             <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
               <div class="panel-footer">
-                <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
-                <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+                  <a type=submit><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</a>
+                <form action="panier.php" method="post">
+                  <input type="text" class="form-control" name="panier" style="display: none;" value=<?php echo $donnees['Nom'] ?>>
+                  <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success"></div>
+                </form>
               </div>
             </div>
           </div>
@@ -114,6 +117,12 @@ session_start();
     ?>
   </div>
 </div><br>
+
+<script type="text/javascript">
+  function afficher_prod(){
+    <?php $_SESSION['produits'] = $donnees ['Nom'];?>
+  }
+</script>
 
 
 

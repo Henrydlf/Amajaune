@@ -1,5 +1,7 @@
 <?php  
     session_start();
+
+    $_SESSION['panier']=isset($_POST["panier"])? $_POST["panier"] : "";
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +93,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col"> </th>
+                            <th scope="col"></th>
                             <th scope="col">Produit</th>
                             <th scope="col">Disponible</th>
                             <th scope="col" class="text-center">Quantité</th>
@@ -102,7 +104,7 @@
                     <tbody>
                         <tr>
                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td><?php echo $_SESSION['panier'][1]; ?></td>
+                            <td><?php echo $_SESSION['panier']; ?></td>
                             <td>In stock</td>
                             <td><input class="form-control" type="text" value="1" /></td>
                             <td class="text-right">124,90 €</td>
