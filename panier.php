@@ -69,7 +69,7 @@
           <li><a href="form_connection.php">Se connecter</a></li>
           <?php } ?>
         </li>
-        <li>
+        <li class="active">
           <?php 
             if($_SESSION){
               if($_SESSION['Type'] == "Acheteur")

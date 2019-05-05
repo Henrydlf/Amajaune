@@ -32,7 +32,7 @@ session_start();
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="main_page.php">Accueil</a></li>
+        <li class="active"><a href="main_page.php">Accueil</a></li>
         <li><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
