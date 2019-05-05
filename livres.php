@@ -103,7 +103,10 @@ try{
               <div class="panel-body"><img style="height:100px;" src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
               <div class="panel-footer">
                 <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
-                <div class="panel-footer"><button class="btn btn-block btn-success">Ajouter au panier</button></div>
+                <form action="livres.php" method="post">
+                  <input type="text" class="form-control" name="panier" id="panier" value="<?php echo $donnees['Nom']; ?>">
+                  <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success" onClick="verif_vente(<?php echo $donnees['Nom']; ?>)"></div>
+                </form>
               </div>
             </div>
           </div>
@@ -117,7 +120,41 @@ $reponse->closeCursor();
   </div>
 </div><br>
 
+<?php
 
+  $_SESSION['nom_prod'] = isset($_POST["panier"])? $_POST["panier"] : "";
+
+  if(!isset($_SESSION['panier'])) 
+  { 
+      /* Initialisation du panier */ 
+      $_SESSION['panier'] = array(); 
+      /* Subdivision du panier */ 
+      $_SESSION['panier']['nom'] = array(); 
+      $_SESSION['panier']['taille'] = array(); 
+      $_SESSION['panier']['prix'] = array(); 
+      $_SESSION['panier']['image'] = array(); 
+  } 
+  /* Ici, on sait que le panier existe, donc on ajoute l'article dedans. */ 
+  if($_SESSION['nom_prod'] != ""){
+    try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+
+    catch (Exception $e){
+      die('Erreur : ' . $e->getMessage());
+    }
+
+    $requete = "SELECT * FROM `produits` WHERE Nom = '".$_SESSION['nom_prod']."'";
+    $sql=$bdd->prepare($requete);
+    $sql->execute();
+    $resultat = $sql->fetch();
+
+    array_push($_SESSION['panier']['nom'],$resultat['Nom']); 
+    array_push($_SESSION['panier']['taille'],$resultat['Taille']); 
+    array_push($_SESSION['panier']['prix'],$resultat['Prix']); 
+    array_push($_SESSION['panier']['image'],$resultat['Image']); 
+  }
+?>
 
 <footer class="container-fluid text-center">
   <p>&copy; Amajaune Copyright</p>  

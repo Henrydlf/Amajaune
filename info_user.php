@@ -124,7 +124,7 @@ session_start();
 
      	<div class="panel-body"><img src="images_main/<?php echo $_SESSION['photo']; ?>" class="img-responsive" style="width:20%" alt="Image"></div>
 
-      <div style="margin-left: 25px">
+      <div style="margin-left: 25px"> 
    
 		<form action="info_user.php" method="post">
 

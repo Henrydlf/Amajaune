@@ -152,6 +152,8 @@ try{
 </div>
 </nav>
 
+
+
 <footer>
   <p>&copy; Amajaune Copyright</p>  
 </footer>

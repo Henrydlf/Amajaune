@@ -13,7 +13,6 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="shortcut icon" href="favicon.ico" >
-
 </head>
 
 <body>
@@ -32,7 +31,7 @@ session_start();
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="main_page.php">Accueuil</a></li>
+        <li class="active"><a href="main_page.php">Accueil</a></li>
         <li><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
@@ -44,7 +43,7 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <?php if($_SESSION){
+            <?php if($_SESSION['Identifiant']!=""){
             ?>
             <span class="glyphicon glyphicon-user"></span>
             <?php
@@ -66,17 +65,14 @@ session_start();
         </li>
         <li>
           <?php 
-            if($_SESSION){
-              if($_SESSION['Type'] == "Acheteur")
-              {?>
-                <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
-              <?php }
-              else if($_SESSION['Type'] == "Vendeur")
-              {?>
-                <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
-              <?php }
-            }
-          ?>
+          if($_SESSION['Type'] == "Acheteur")
+          {?>
+            <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
+          <?php }
+          else if($_SESSION['Type'] == "Vendeur")
+          {?>
+            <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
+          <?php }?>
         </li>
       </ul>
     </div>

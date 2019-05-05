@@ -1,7 +1,5 @@
 <?php  
     session_start();
-
-    //$_SESSION['panier']=isset($_POST["panier"])? $_POST["panier"] : "";
 ?>
 
 <!DOCTYPE html>
@@ -98,14 +96,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <?php
+                        for($i = 1; $i < sizeof($_SESSION['panier']['nom']); $i++)
+                        {
+                      ?>
                         <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td><?php echo $_SESSION['panier']; ?></td>
+                            <td><img  style="height: 100px" src="images_main/<?php echo $_SESSION['panier']['image'][$i] ?>"></td>
+                            <td><?php echo $_SESSION['panier']['nom'][$i] ?></td>
                             <td>In stock</td>
                             <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">124,90 €</td>
+                            <td class="text-right"><?php echo $_SESSION['panier']['prix'][$i]?> €</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                         </tr>
+                      <?php
+                        }
+                      ?>
                         <tr>
                             <td></td>
                             <td></td>
