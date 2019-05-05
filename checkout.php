@@ -69,7 +69,7 @@
           {?>
             <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
           <?php }
-          else if($_SESSION['Type'] == "Vendeur")
+          else if($_SESSION['Type'] == "Vendeur" || $_SESSION['Type'] == "Administrateur")
           {?>
             <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
           <?php }?>
@@ -94,7 +94,7 @@
                 <form class="form-horizontal" method="post" action="">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
-                    <div class="panel panel-info">
+                <!--    <div class="panel panel-info">
                         <div class="panel-heading">
                             Votre panier <div class="pull-right"><small><a class="afix-1" href="panier.php">Revenir au panier</a></small></div>
                         </div>
