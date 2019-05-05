@@ -111,7 +111,6 @@
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                         </tr>
                       <?php
-                        //$_SESSION['panier']['quantite'][$i]=isset($_POST["quantite"])?$_POST["quantite"] : "";
                         }
                       ?>
                         <tr>
@@ -168,7 +167,7 @@
 </nav>
 
 <?php
-  $_SESSION['panier']['quantite'][$i]=isset($_POST["quantite"])?$_POST["quantite"] : "";
+  $_SESSION['quantite']=isset($_POST["quantite"])?$_POST["quantite"] : "";
 
 ?>
 
