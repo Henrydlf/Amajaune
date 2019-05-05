@@ -19,5 +19,16 @@
 	$result = mysqli_query($db_handle, $sql);
 	mysqli_close($db_handle);
 
-	header('Location: vente_livre.php');
+	if($categorie == "livres"){
+		header('Location: vente_livre.php');
+	}
+	elseif($categorie == "vetements"){
+		header('Location: vente_vetements.php');
+	}
+	elseif($categorie == "musique"){
+		header('Location: vente_musique.php');
+	}
+	elseif($categorie == "sports et loisirs"){
+		header('Location: vente_sel.php');
+	}
 ?>
