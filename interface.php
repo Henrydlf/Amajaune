@@ -5,7 +5,7 @@
 	class Site
 	{
 		protected $user;
-		protected $paniers;
+		protected $paniers = array();
 
 		public function __construct(Utilisateur $_user){
 			$this->user = $_user;
@@ -18,6 +18,11 @@
 
 		public function getUser(){
 			return $this->user;
+		}
+
+		public function setPanier($nom_prod): void
+		{
+			$panier[] = array($nom_prod);
 		}
 
 		public function connectUser(): void{
@@ -52,18 +57,16 @@
 					$_SESSION['cvv']=$resultat['cvv'];
 					$_SESSION['type_carte']=$resultat['type_carte'];
 					$_SESSION['nom_carte']=$resultat['nom_carte'];
+					$_SESSION['panier'] = array(); 
+					/* Subdivision du panier */ 
+					$_SESSION['panier']['nom'] = array(); 
+					$_SESSION['panier']['taille'] = array(); 
+					$_SESSION['panier']['prix'] = array();
+					$_SESSION['panier']['image'] = array(); 
 				}
 
 				header('Location: main_page.php');
 			}
-		}
-
-		public function afficherPanier()
-		{
-			if($this->user->getType() == 'Acheteur' || $this->user->getType() == 'Administrateur')
-				echo "Votre panier est disponible <br><br>";
-			elseif($this->user->getType() == 'Vendeur')
-				echo "Vous etes un vendeur";
 		}
 	}
 ?>

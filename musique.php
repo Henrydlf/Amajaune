@@ -100,9 +100,9 @@ session_start();
             <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
               <div class="panel-footer">
                   <a type=submit><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</a>
-                <form action="panier.php" method="post">
-                  <input type="text" class="form-control" name="panier" style="display: none;" value=<?php echo $donnees['Nom'] ?>>
-                  <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success"></div>
+                <form action="musique.php" method="post">
+                  <input type="text" class="form-control" name="panier" id="panier" value="<?php echo $donnees['Nom']; ?>">
+                  <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success" onClick="verif_vente(<?php echo $donnees['Nom']; ?>)"></div>
                 </form>
               </div>
             </div>
@@ -114,14 +114,56 @@ session_start();
   </div>
 </div><br>
 
-<script type="text/javascript">
-  function afficher_prod(){
-    <?php $_SESSION['produits'] = $donnees ['Nom'];?>
+<?php
+
+  $_SESSION['nom_prod'] = isset($_POST["panier"])? $_POST["panier"] : "";
+
+  if(!isset($_SESSION['panier'])) 
+  { 
+      /* Initialisation du panier */ 
+      $_SESSION['panier'] = array(); 
+      /* Subdivision du panier */ 
+      $_SESSION['panier']['nom'] = array(); 
+      $_SESSION['panier']['taille'] = array(); 
+      $_SESSION['panier']['prix'] = array(); 
+      $_SESSION['panier']['image'] = array(); 
+  } 
+  /* Ici, on sait que le panier existe, donc on ajoute l'article dedans. */ 
+  if($_SESSION['nom_prod'] != ""){
+    try{
+      $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+    }
+
+    catch (Exception $e){
+      die('Erreur : ' . $e->getMessage());
+    }
+
+    $requete = "SELECT * FROM `produits` WHERE Nom = '".$_SESSION['nom_prod']."'";
+    $sql=$bdd->prepare($requete);
+    $sql->execute();
+    $resultat = $sql->fetch();
+
+    array_push($_SESSION['panier']['nom'],$resultat['Nom']); 
+    array_push($_SESSION['panier']['taille'],$resultat['Taille']); 
+    array_push($_SESSION['panier']['prix'],$resultat['Prix']); 
+    array_push($_SESSION['panier']['image'],$resultat['Image']); 
   }
-</script>
-
-
+?>
 
 <footer class="container-fluid text-center">
   <p>&copy; Amajaune Copyright</p>  
 </footer>
+</ul>
+</div>
+</div>
+</nav>
+
+<script type="text/javascript">
+  function verif_vente(msg1)
+  {
+    var msg = "le nombre est"+msg1;
+    alert("salut");
+  }
+</script>
+</body>
+</html>
