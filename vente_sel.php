@@ -88,7 +88,7 @@ session_start();
 		<div class="col-sm-3 sidenav" style= "background-color: white; height: 500px; width: 250px"  >
 		  <h4>Categories de vente</h4>
 		  <ul class="nav nav-pills nav-stacked">
-		    <li><a href="form_vente.php">Livres</a></li>
+		    <li><a href="vente_livre.php">Livres</a></li>
 		    <li><a href="vente_vetements.php">Vetements</a></li>
 		    <li><a href="vente_musique.php">Musique</a></li>
         <li class="active"><a href="#section2">Sports et Loisirs</a></li>
@@ -128,6 +128,7 @@ session_start();
   {
     alert("Produit vendue");
   }
+</script> 
 
 </body>
 </html>
