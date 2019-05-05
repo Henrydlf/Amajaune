@@ -6,6 +6,9 @@ session_start();
 $_SESSION = array();
 
 session_destroy();
+session_start();
+$_SESSION['Identifiant']="";
+$_SESSION['Type']="";
 header('Location: main_page.php');
 		exit();
 ?>
