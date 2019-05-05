@@ -1,3 +1,7 @@
+<?php  
+    session_start();
+?>
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -161,7 +165,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                     <!--SHIPPING METHOD-->
                     <div class="panel panel-info">
-                        <div class="panel-heading">Addresss</div>
+                        <div class="panel-heading">Adresse</div>
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="col-md-12">
@@ -171,18 +175,18 @@
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Pays:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="country" value="" />
+                                    <input type="text" class="form-control" name="country" value="France" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-xs-12">
                                     <strong>Prénom:</strong>
-                                    <input type="text" name="first_name" class="form-control" value="" />
+                                    <input type="text" name="first_name" class="form-control" value="<?php echo " " .$_SESSION['Prenom']?>" />
                                 </div>
                                 <div class="span1"></div>
                                 <div class="col-md-6 col-xs-12">
                                     <strong>Nom:</strong>
-                                    <input type="text" name="last_name" class="form-control" value="" />
+                                    <input type="text" name="last_name" class="form-control" value="<?php echo " " .$_SESSION['Nom']?>" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -215,7 +219,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Adresse email:</strong></div>
-                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="<?php echo " " .$_SESSION['Mail']?>" /></div>
                             </div>
                         </div>
                     </div>
@@ -226,61 +230,22 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Type de carte:</strong></div>
-                                <div class="col-md-12">
-                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
-                                        <option value="5">Visa</option>
-                                        <option value="6">MasterCard</option>
-                                        <option value="7">American Express</option>
-                                        <option value="8">Discover</option>
-                                    </select>
-                                </div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="<?php echo " " .$_SESSION['type_carte']?>" /></div>
                             </div>
+                        
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Numéro de carte de crédit:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" /></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="<?php echo " " .$_SESSION['num_carte']?>" /></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>CVV de la carte:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" /></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="<?php echo " " .$_SESSION['cvv']?>" /></div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <strong>Date d'expiration</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Month</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                </select>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Year</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                </select>
-                                </div>
+                                <div class="col-md-12"><strong>Date d'expiration:</strong></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="<?php echo " " .$_SESSION['date_exp']?>" /></div>
                             </div>
+                        
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <span>Paiement sécurisé en utilisant votre carte.</span>
