@@ -1,6 +1,5 @@
 <?php 
 session_start();
-$categorie = "sports et loisirs";
 ?>
 
 <!DOCTYPE html>
@@ -113,13 +112,22 @@ $categorie = "sports et loisirs";
         <div class="input-group form-group">
           <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>
         </div>
+        <div class="input-group form-group">
+          <input type="text" class="form-control" id="categorie" name="categorie" value="sports et loisirs" style="display: none;">
+        </div>
         <div class="form-group">
-            <input type="submit" value="Vendre" class="btn float-right login_btn">
+            <input type="submit" value="Vendre" class="btn float-right login_btn" onClick="verif_vente()">
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function verif_vente()
+  {
+    alert("Produit vendue");
+  }
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 <?php 
 session_start();
-$categorie = "vetements";
 ?>
 
 <!DOCTYPE html>
@@ -121,13 +120,22 @@ $categorie = "vetements";
             <option>Enfant</option>
           </select>
         </div>
+        <div class="input-group form-group">
+          <input type="text" class="form-control" id="categorie" name="categorie" value="vetements" style="display: none;">
+        </div>
         <div class="form-group">
-            <input type="submit" value="Vendre" class="btn float-right login_btn">
+            <input type="submit" value="Vendre" class="btn float-right login_btn" onClick="verif_vente()">
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function verif_vente()
+  {
+    alert("Produit vendue");
+  }
 
 </body>
 </html>
