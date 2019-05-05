@@ -167,7 +167,7 @@
 </nav>
 
 <?php
-  $_SESSION['quantite']=isset($_POST["quantite"])?$_POST["quantite"] : "";
+  //$_SESSION['quantite']=isset($_POST["quantite"])?$_POST["quantite"] : "";
 
 ?>
 
