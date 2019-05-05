@@ -13,4 +13,5 @@
 	echo "Bienvenue " . $user->getSurname() . ".<br>";
 
 	$user->addUser();
+	header('Location: main_page.php');
 ?>
