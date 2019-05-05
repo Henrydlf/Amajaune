@@ -107,7 +107,7 @@ session_start();
         </div>
         <div class="input-group form-group">
           <input type="file" class="custom-file-input" id="image" name="image" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
-          <label class="custom-file-label" for="image">Ajouter une photo</label> <br><br>
+          <label class="custom-file-label" for="image">Ajouter une photo</label> <br>
         </div>
         <div class="input-group form-group">
           <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>

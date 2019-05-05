@@ -106,19 +106,35 @@ session_start();
           <input type="text" class="form-control" name="prix" placeholder="Prix">
         </div>
         <div class="input-group form-group">
-          <input type="file" class="custom-file-input" id="image" name="image" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
-          <label class="custom-file-label" for="image">Ajouter une photo</label> <br><br>
-        </div>
-        <div class="input-group form-group">
-          <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>
-        </div>
-        <div class="input-group form-group">
+          <label>Choisissez une categorie de personne</label> <br>
           <select name="sexe">
-            <option placeholder="Sexe"></option>
+            <option> ---</option>
             <option>Homme</option>
             <option>Femme</option>
             <option>Enfant</option>
           </select>
+        </div>
+        <div class="input-group form-group">
+          <label>Taille</label> <br>
+          <select name="taille">
+            <option> ---</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+          </select>
+        </div>
+        <div class="input-group form-group">
+          <input type="text" class="form-control" name="couleur" placeholder="Couleur">
+        </div>
+        <div class="input-group form-group">
+          <input type="file" class="custom-file-input" id="image" name="image" lang="fr" accept=".jpg,.jpeg,.gif,.png" />
+          <label class="custom-file-label" for="image">Ajouter une photo</label> <br>
+        </div>
+        <div class="input-group form-group">
+          <textarea type="text" class="form-control" name="description" placeholder="Description" rows="5" cols="22"></textarea>
         </div>
         <div class="input-group form-group">
           <input type="text" class="form-control" id="categorie" name="categorie" value="vetements" style="display: none;">
