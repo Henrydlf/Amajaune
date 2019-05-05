@@ -128,7 +128,7 @@ session_start();
   {
     alert("Produit vendue");
   }
-</script>
+</script> 
 
 </body>
 </html>
