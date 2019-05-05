@@ -105,12 +105,13 @@
                             <td><?php echo $_SESSION['panier']['nom'][$i] ?></td>
                             <td>In stock</td>
                             <form action="panier.php" method="post">
-                              <td><input class="form-control" type="text" value="<?php echo $_SESSION['panier']['quantite'][$i]; ?>" id="quantite" name="quantite"></td>
+                              <td><input class="form-control" type="text" value="<?php echo $_SESSION['quantite']; ?>" id="quantite" name="quantite"></td>
                             <td><input type="submit" value="valider"></td></form>
-                            <td class="text-right"><?php $p=$_SESSION['panier']['prix'][$i]*$_SESSION['panier']['quantite'][$i]; echo $p; ?> €</td>
+                            <td class="text-right"><?php $p=$_SESSION['panier']['prix'][$i]*$_SESSION['quantite']; echo $p; ?> €</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                         </tr>
                       <?php
+                        //$_SESSION['panier']['quantite'][$i]=isset($_POST["quantite"])?$_POST["quantite"] : "";
                         }
                       ?>
                         <tr>
@@ -123,7 +124,7 @@
                             $soustot = 0;
                             for($i = 0; $i < sizeof($_SESSION['panier']['nom']); $i++)
                             {
-                              $soustot = $soustot+$_SESSION['panier']['prix'][$i]*$_SESSION['panier']['quantite'][$i];
+                              $soustot = $soustot+$_SESSION['panier']['prix'][$i]*$_SESSION['quantite'];
                             }
                               echo $soustot;
                             ?> €</td>
@@ -165,9 +166,12 @@
 </div>
 </div>
 </nav>
+
 <?php
   $_SESSION['panier']['quantite'][$i]=isset($_POST["quantite"])?$_POST["quantite"] : "";
+
 ?>
+
 <!-- Footer -->
 <footer>
   <p>&copy; Amajaune Copyright</p>  
