@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Suppression vendeurs</title>
+  <title>Suppression produits</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,7 +20,7 @@ session_start();
     /* Set gray background color and 100% height */
     .sidenav {
       background-color: #f1f1f1;
-      height: 700px;
+      height: 500px;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -113,26 +113,36 @@ session_start();
       <?php } ?>
         <?php if($_SESSION['Type']=="Administrateur")
         {?>
-          <li class="active"><a href="supp_vendeurs.php">Supprimer des vendeurs</a></li>
-        <?php }?>
-         <?php if($_SESSION['Type']=="Administrateur" || $_SESSION['Type']=="Vendeur")
-        {?>
-          <li><a href="supp_produits.php">Supprimer des Produits</a></li>
+          <li><a href="supp_vendeurs.php">Supprimer des vendeurs</a></li>
         <?php } ?>
+        <?php if($_SESSION['Type']=="Administrateur" || $_SESSION['Type']=="Vendeur")
+        {?>
+          <li class="active"><a href="supp_produits.php">Supprimer des Produits</a></li>
+        <?php } ?>
+
 
       </ul><br>
     </div>
 
     <div class="col-sm-9">
+      <div style="margin-left: 25px"><br>
+        <h4>Produits mis en vente</h4>
+      </div>
 
-  
+<?php
 
-      <div style="margin-left: 25px">
-   
-        <table class="table table-bordered table-striped table-sm">
-        <br>
-    <h4>Vendeurs de Amajaune 51</h4>
-
+if($_SESSION['Type']=="Vendeur"){
+?>
+  <table class="table table-bordered table-striped table-sm">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
 <?php
 try{
     $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
@@ -141,41 +151,102 @@ try{
     die('Erreur : ' . $e->getMessage());
   }
 
-  $requete = "SELECT * FROM utilisateurs WHERE Type = 'Vendeur' ";
+  $requete = "SELECT * FROM produits WHERE Vendeur='".$_SESSION['Identifiant']."' ";
   $reponse = $bdd->query($requete);
 
   while ( $donnees = $reponse->fetch() ) {
 ?> 
-             <p> 
-               <?php echo $donnees ['Identifiant'];?>
-               <form action="supp_vendeurs.php" method="post">
-               <input type="hidden" name="nomasupp" value="<?php echo $donnees ['Identifiant'];?>">
-               <input type="submit" name="submit" value="Supprimer" class="btn btn-warning">
+             <tr> 
+               <td><img style="height:100px;" src="images_main/<?php echo $donnees['Image']?>" class="img-responsive" style="width:50%" alt="Image"></td>
+               <td><?php echo $donnees ['Nom'];?></td>
+               <td><?php echo $donnees ['Prix'];?>€</td>
+               <form action="supp_produits.php" method="post">
+               <input type="hidden" name="nomasupp" value="<?php echo $donnees ['Nom'];?>">
+               <td><input type="submit" name="submit" value="Supprimer" class="btn btn-warning"></td>
                </form>
-             </p>
+             </tr>
               <br>
 <?php  
   }
 $pseudo = isset($_POST["nomasupp"])? $_POST["nomasupp"] : "";
 
-  $requete = "DELETE FROM `utilisateurs` WHERE Identifiant = '".$pseudo."'";
+  $requete = "DELETE FROM `produits` WHERE Nom = '".$pseudo."'";
   $sql=$bdd->prepare($requete);
   $sql->execute();
   $resultat = $sql->fetch();
+?>
+</tbody>
+</table>
+<?php
 
 $reponse->closeCursor();
-?>
- </tbody>
-</table>
 
-      </div>
-        
-    </div>
+
+}
+
+if($_SESSION['Type']=="Administrateur"){
+?> 
+  <table style="margin-top: 0px;" class="table table-bordered table-striped table-sm">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Vendeur</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<?php
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+  }
+  catch (Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
+
+  $requete = "SELECT * FROM produits";
+  $reponse = $bdd->query($requete);
+
+  while ( $donnees = $reponse->fetch() ) {
+?> 
+             <tr> 
+               <td><img style="height:100px;" src="images_main/<?php echo $donnees['Image']?>" class="img-responsive" style="width:50%" alt="Image"></td>
+               <td><?php echo $donnees ['Nom'];?></td>
+               <td><?php echo $donnees ['Prix'];?>€</td>
+               <td><?php echo $donnees ['Vendeur'] ?></td>
+               <form action="supp_produits.php" method="post">
+               <input type="hidden" name="nomasupp" value="<?php echo $donnees ['Nom'];?>">
+               <td><input type="submit" name="submit" value="Supprimer" class="btn btn-warning"></td>
+               </form>
+             </tr>
+              <br>
+<?php  
+  }
+$pseudo = isset($_POST["nomasupp"])? $_POST["nomasupp"] : "";
+
+  $requete = "DELETE FROM `produits` WHERE Nom = '".$pseudo."'";
+  $sql=$bdd->prepare($requete);
+  $sql->execute();
+  $resultat = $sql->fetch();
+?>
+</tbody>
+</table>
 </div>
 </div>
-</body>
+</div>
 </ul>
-</div>
+
+<?php
+
+$reponse->closeCursor();
+
+}
+?>
+
+
+</body>
+
 
 <footer>
   <p>&copy; Amajaune Copyright</p>  

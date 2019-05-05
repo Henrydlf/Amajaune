@@ -31,7 +31,7 @@ session_start();
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="main_page.php">Accueil</a></li>
+        <li><a href="main_page.php">Accueil</a></li>
         <li><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
         <li><a href="vetements.php">Vêtements</a></li>
@@ -69,7 +69,7 @@ session_start();
           {?>
             <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
           <?php }
-          else if($_SESSION['Type'] == "Vendeur")
+          else if($_SESSION['Type'] == "Vendeur" || $_SESSION['Type'] == "Administrateur")
           {?>
             <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
           <?php }?>
