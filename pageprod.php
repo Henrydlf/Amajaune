@@ -1,11 +1,11 @@
-<?php 
-session_start();
+<?php
+session_start(); 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Vêtements</title>
+  <title>Musiques</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -35,7 +35,7 @@ session_start();
         <li><a href="main_page.php">Accueil</a></li>
         <li><a href="livres.php">Livres</a></li>
         <li><a href="musique.php">Musiques</a></li>
-        <li class="active"><a href="vetements.php">Vêtements</a></li>
+        <li><a href="vetements.php">Vêtements</a></li>
         <li><a href="sportsetloisirs.php">Sports et loisir</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -84,44 +84,59 @@ session_start();
   </div>
 </nav>
 
-<div class="container">    
+
+<div class="container text-center">    
+  <h3>Musique</h3><br>
   <div class="row">
+    <div class="col-sm-4"> 
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      
+       <p>Prix à l'unité</p>
+      
+    </div>
+    <div class="col-sm-4">
+      <div class="well well-sm">
+       <p>Titre,Auteur</p>
+      </div>
+      <div class="well well-lg">
+       <p>Description du produit</p>
+      </div>
+      
+    </div>
 
-<?php
-try{
-    $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
-  }
-  catch (Exception $e){
-    die('Erreur : ' . $e->getMessage());
-  }
 
-  $requete = "SELECT * FROM produits WHERE Categorie = 'vetements' ";
-  $reponse = $bdd->query($requete);
-
-  while ( $donnees = $reponse->fetch() ) {
-?>
+ <div class="btn-group">
+  <button type="button" class="btn btn-default">Quantité</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+   <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+     <li><a href="#" title="1">1</a></li>
+     <li><a href="#" title="2">2</a></li>
+     <li><a href="#" title="3">3</a></li>
+     <li><a href="#" title="4">4</a></li>
+     <li><a href="#" title="5">5</a></li>
+     <li><a href="#" title="6">6</a></li>
+     <li><a href="#" title="7">7</a></li>
+     <li><a href="#" title="8">8</a></li>
+     <li><a href="#" title="9">9</a></li>
+     <li><a href="#" title="10">10</a></li>
      
+  </ul>
+</div>
+  <br><br><br><br>
 
-      <div class="col-sm-4">
-            <div class="panel panel-primary">
-             <!-- <div class="panel-heading"><?php echo $donnees ['Nom'];?></div> -->
-              <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
-              <div class="panel-footer"> <?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€ </div>
-            </div>
-          </div>
-
-
-<?php  
-  }
-
-$reponse->closeCursor();
-?>
-
+    <div class="text-center">
+    <a href="panier.php" class="btn btn-primary btn-lg" role="button">Ajouter au panier</a>
+    </button>
+    </div>
+    
   </div>
 </div><br>
 
 
 
-<footer class="container-fluid text-center">
+
+<footer>
   <p>&copy; Amajaune Copyright</p>  
 </footer>

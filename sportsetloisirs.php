@@ -84,43 +84,44 @@ session_start();
   </div>
 </nav>
 
-
-
 <div class="container">    
   <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">VENTE FLASH LIVRE</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-danger">
-        <div class="panel-heading">VENTE FLASH MUSIQUE</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-success">
-        <div class="panel-heading">VENTE FLASH VÊTEMENTS</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">VENTE FLASH SPORTS ET LOISIRS</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Profitez de cette offre</div>
-      </div>
-    </div>
+
+<?php
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=amajaune;charset=utf8', 'root', '');
+  }
+  catch (Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
+
+  $requete = "SELECT * FROM produits WHERE Categorie = 'sports et loisirs' ";
+  $reponse = $bdd->query($requete);
+
+  while ( $donnees = $reponse->fetch() ) {
+?>
+     
+
+      <div class="col-sm-4">
+            <div class="panel panel-primary">
+             <!-- <div class="panel-heading"><?php echo $donnees ['Nom'];?></div> -->
+              <div class="panel-body"><img src="images_main/<?php echo $donnees ['Image']; ?>" class="img-responsive" style="width:50%" alt="Image"></div>
+              <div class="panel-footer"> <?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€ </div>
+            </div>
+          </div>
+
+
+<?php  
+  }
+
+$reponse->closeCursor();
+?>
+
   </div>
 </div><br>
 
 
 
 <footer class="container-fluid text-center">
-  <p>Amajaune Copyright</p>  
+  <p>&copy; Amajaune Copyright</p>  
 </footer>
