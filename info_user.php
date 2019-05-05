@@ -38,7 +38,6 @@ session_start();
 	<!--CLASSE DU TITRE DU CITE AMAJAUNE-->
 <div class="jumbotron">
   <div class="container text-center">
-    <!--TITRE DU CITE----------------------------------------------------------------------------------------->
     <h1> 
     <div class="color">Amajaune 51</div> 
     </h1>
@@ -88,7 +87,7 @@ session_start();
               {?>
                 <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
               <?php }
-              else if($_SESSION['Type'] == "Vendeur")
+              else if($_SESSION['Type'] == "Vendeur" || $_SESSION['Type'] == "Administrateur")
               {?>
                 <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
               <?php }
@@ -114,8 +113,11 @@ session_start();
         <?php if($_SESSION['Type']=="Administrateur")
         {?>
           <li><a href="supp_vendeurs.php">Supprimer des vendeurs</a></li>
-        <?php } 
-        ?>
+        <?php } ?>
+        <?php if($_SESSION['Type']=="Administrateur" || $_SESSION['Type']=="Vendeur")
+        {?>
+          <li><a href="supp_produits.php">Supprimer des Produits</a></li>
+        <?php } ?>
 
       </ul><br>
     </div>

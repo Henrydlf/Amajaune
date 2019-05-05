@@ -91,7 +91,7 @@ session_start();
           {?>
             <a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier </a>
           <?php }
-          else if($_SESSION['Type'] == "Vendeur")
+          else if($_SESSION['Type'] == "Vendeur" || $_SESSION['Type'] == "Administrateur")
           {?>
             <a href="vente_livre.php"><span class="glyphicon glyphicon-shopping-cart"></span> Vendre un produit </a>
           <?php }?>
