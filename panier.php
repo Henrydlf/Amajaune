@@ -139,18 +139,24 @@
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <button class="btn btn-block btn-light">Continuer mes achats</button>
+                    <!--button class="btn btn-block btn-light">Continuer mes achats</button-->
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-block btn-success">Paiement</button>
+                    <a style="width: 300px;" class="btn btn-success" href="checkout.php" role="button">Paiement</a>
                 </div>
             </div>
         </div>
         <br /><br />
     </div>
 </div>
-
+</ul>
+</div>
+</div>
+</nav>
 <!-- Footer -->
 <footer>
   <p>&copy; Amajaune Copyright</p>  
 </footer>
+
+</body>
+</html>
