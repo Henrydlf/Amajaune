@@ -104,7 +104,7 @@ try{
               <div class="panel-footer">
                 <div><?php echo $donnees ['Nom'];?> - <?php echo $donnees ['Prix'];?>€</div>
                 <form action="vetements.php" method="post">
-                  <input type="text" class="form-control" name="panier" id="panier" value="<?php echo $donnees['Nom']; ?>">
+                  <input type="text" class="form-control" name="panier" id="panier" style="display: none;" value="<?php echo $donnees['Nom']; ?>">
                   <div class="panel-footer"><input type="submit" value="Ajouter au panier" class="btn btn-block btn-success" onClick="verif_vente(<?php echo $donnees['Nom']; ?>)"></div>
                 </form>
               </div>
